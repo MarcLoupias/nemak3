@@ -20,7 +20,7 @@ public class CoreServicesTestImpl implements CoreServicesI {
 
   private void loadTestData(){
     Star s = new Star();
-    s.setId(1);
+    s.setId(1l);
     s.setName("JUHIK");
     s.setOsiumDeposit(false);
     s.setKlunkDeposit(false);

@@ -2,9 +2,7 @@ package fr.nemak3.server.map;
 
 
 import fr.nemak3.core.map.Galaxy;
-import fr.nemak3.core.map.MapPosition;
 import fr.nemak3.core.map.Sector;
-import org.apache.commons.configuration.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class GalaxyGenerator {
@@ -13,13 +11,12 @@ public abstract class GalaxyGenerator {
   protected Galaxy galaxy;
 
   @NotNull
-  protected GalaxyGeneratorConfig config;
+  protected GalaxyGeneratorSettings config;
 
   protected Sector[][] sectorsStructure;
 
-  protected GalaxyGenerator(@NotNull GalaxyGeneratorConfig config) throws ConfigurationException {
+  protected GalaxyGenerator(@NotNull GalaxyGeneratorSettings config) {
     this.config = config;
-    this.config.load();
   }
 
   @NotNull
@@ -28,7 +25,7 @@ public abstract class GalaxyGenerator {
   }
 
   @NotNull
-  protected GalaxyGeneratorConfig getConfig() {
+  protected GalaxyGeneratorSettings getConfig() {
     return config;
   }
 
@@ -38,7 +35,7 @@ public abstract class GalaxyGenerator {
 
   abstract protected void initialize();
 
-  abstract protected void generateStars() throws ConfigurationException, StarGeneratorException;
+  abstract protected void generateStars() throws StarGeneratorException;
 
-  abstract Galaxy generate() throws GalaxyGeneratorException, StarGeneratorException, ConfigurationException;
+  abstract Galaxy generate() throws GalaxyGeneratorException, StarGeneratorException;
 }

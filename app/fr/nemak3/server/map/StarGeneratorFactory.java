@@ -1,6 +1,5 @@
 package fr.nemak3.server.map;
 
-import org.apache.commons.configuration.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
 
 public class StarGeneratorFactory {
@@ -16,8 +15,8 @@ public class StarGeneratorFactory {
   private StarGeneratorFactory() {
   }
 
-  public StarGenerator getGenerator(int impl, @NotNull StarGeneratorConfig config)
-          throws StarGeneratorException, ConfigurationException {
+  public StarGenerator getGenerator(int impl, @NotNull StarGeneratorSettings config)
+          throws StarGeneratorException {
     switch(impl) {
       case STANDARD:{
         return new StarGeneratorStandardImpl(config);

@@ -1,5 +1,6 @@
-package fr.marco46;
+package fr.nemak3.db;
 
+import fr.nemak3.core.GameObject;
 import play.db.jpa.JPA;
 
 import javax.persistence.Query;
@@ -23,11 +24,11 @@ public class Dao {
 
     }
 
-    public <T extends DaoObject> T load(Class<T> clazz, Long id) {
+    public <T extends GameObject> T load(Class<T> clazz, Long id) {
         return JPA.em().find(clazz, id);
     }
 
-    public <T extends DaoObject> List<T> loadAll(Class<T> clazz) {
+    public <T extends GameObject> List<T> loadAll(Class<T> clazz) {
         return JPA.em().createQuery("from " + clazz.getName()).getResultList();
     }
 
@@ -47,15 +48,15 @@ public class Dao {
         return (List<T>) internalQueryFactory(jpaQL, jpaParametersValues).getResultList();
     }
 
-    public DaoObject store(DaoObject elt) {
+    public GameObject store(GameObject elt) {
         return JPA.em().merge(elt);
     }
 
-    public void saveNew(DaoObject elt) {
+    public void saveNew(GameObject elt) {
         JPA.em().persist(elt);
     }
 
-    public void remove(DaoObject elt) {
+    public void remove(GameObject elt) {
         JPA.em().remove(elt);
     }
 }

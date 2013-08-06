@@ -1,9 +1,7 @@
 package fr.nemak3.server.map;
 
 import fr.nemak3.core.map.Galaxy;
-import fr.nemak3.core.map.MapArea;
 import fr.nemak3.core.map.Sector;
-import org.apache.commons.configuration.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -18,12 +16,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public class GalaxyGeneratorSmallSizeImpl extends GalaxyGenerator {
 
-  protected GalaxyGeneratorSmallSizeImpl(@NotNull GalaxyGeneratorConfig config) throws ConfigurationException {
+  protected GalaxyGeneratorSmallSizeImpl(@NotNull GalaxyGeneratorSettings config) {
     super(config);
   }
 
   @Override
-  Galaxy generate() throws GalaxyGeneratorException, StarGeneratorException, ConfigurationException {
+  Galaxy generate() throws GalaxyGeneratorException, StarGeneratorException {
     initialize();
     generateStars();
     return galaxy;
@@ -61,7 +59,7 @@ public class GalaxyGeneratorSmallSizeImpl extends GalaxyGenerator {
     sectorsStructure = tmpSectorsStructure.clone();
   }
 
-  protected void generateStars() throws ConfigurationException, StarGeneratorException {
+  protected void generateStars() throws StarGeneratorException {
 
   }
 

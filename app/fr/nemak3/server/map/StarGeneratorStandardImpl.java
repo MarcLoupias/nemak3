@@ -4,12 +4,11 @@ package fr.nemak3.server.map;
 import fr.nemak3.core.map.Star;
 import fr.nemak3.core.map.StarStatus;
 import fr.nemak3.tools.RandomGenerator;
-import org.apache.commons.configuration.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
 
 public class StarGeneratorStandardImpl extends StarGenerator {
 
-  public StarGeneratorStandardImpl(@NotNull StarGeneratorConfig config) throws ConfigurationException {
+  public StarGeneratorStandardImpl(@NotNull StarGeneratorSettings config) {
     super(config);
   }
 

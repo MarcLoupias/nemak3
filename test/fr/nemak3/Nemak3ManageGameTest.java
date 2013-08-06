@@ -1,5 +1,6 @@
 package fr.nemak3;
 
+import fr.nemak3.core.Game;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertNotNull;

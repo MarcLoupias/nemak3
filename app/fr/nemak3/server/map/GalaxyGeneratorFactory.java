@@ -1,7 +1,5 @@
 package fr.nemak3.server.map;
 
-
-import org.apache.commons.configuration.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
 
 public class GalaxyGeneratorFactory {
@@ -20,8 +18,8 @@ public class GalaxyGeneratorFactory {
   private GalaxyGeneratorFactory() {
   }
 
-  public GalaxyGenerator getGenerator(int impl, @NotNull GalaxyGeneratorConfig config)
-          throws GalaxyGeneratorException, ConfigurationException {
+  public GalaxyGenerator getGenerator(int impl, @NotNull GalaxyGeneratorSettings config)
+          throws GalaxyGeneratorException {
     switch(impl) {
       case TINY_SIZE:{
         return new GalaxyGeneratorTinySizeImpl(config);

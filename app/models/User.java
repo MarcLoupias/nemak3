@@ -1,6 +1,6 @@
 package models;
 
-import fr.marco46.DaoObject;
+import fr.nemak3.core.GameObject;
 
 import javax.persistence.*;
 
@@ -12,7 +12,7 @@ import javax.persistence.*;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-public class User extends DaoObject {
+public class User extends GameObject {
 
     private String login;
     private String pwd;

@@ -2,11 +2,7 @@ package fr.nemak3.server.map;
 
 
 import fr.nemak3.core.map.Galaxy;
-import fr.nemak3.core.map.Sector;
-import org.apache.commons.configuration.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Map;
 
 /**
  * <p>Standard size is 9 sectors</p>
@@ -22,7 +18,7 @@ import java.util.Map;
  */
 public class GalaxyGeneratorStandardSizeImpl extends GalaxyGenerator {
 
-  protected GalaxyGeneratorStandardSizeImpl(@NotNull GalaxyGeneratorConfig config) throws ConfigurationException {
+  protected GalaxyGeneratorStandardSizeImpl(@NotNull GalaxyGeneratorSettings config) {
     super(config);
   }
 

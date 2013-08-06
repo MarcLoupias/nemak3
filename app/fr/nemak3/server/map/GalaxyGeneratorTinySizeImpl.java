@@ -1,12 +1,11 @@
 package fr.nemak3.server.map;
 
+import fr.nemak3.core.GameSettings;
 import fr.nemak3.core.map.Galaxy;
-import fr.nemak3.core.map.MapArea;
 import fr.nemak3.core.map.MapPosition;
 import fr.nemak3.core.map.Sector;
 import fr.nemak3.core.map.Star;
 import fr.nemak3.tools.RandomGenerator;
-import org.apache.commons.configuration.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -19,12 +18,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public class GalaxyGeneratorTinySizeImpl extends GalaxyGenerator {
 
-  protected GalaxyGeneratorTinySizeImpl(@NotNull GalaxyGeneratorConfig config) throws ConfigurationException {
+  protected GalaxyGeneratorTinySizeImpl(@NotNull GalaxyGeneratorSettings config) {
     super(config);
   }
 
   @Override
-  Galaxy generate() throws GalaxyGeneratorException, StarGeneratorException, ConfigurationException {
+  Galaxy generate() throws GalaxyGeneratorException, StarGeneratorException {
     initialize();
     generateStars();
     return galaxy;
@@ -54,7 +53,7 @@ public class GalaxyGeneratorTinySizeImpl extends GalaxyGenerator {
     sectorsStructure = tmpSectorsStructure.clone();
   }
 
-  protected void generateStars() throws ConfigurationException, StarGeneratorException {
+  protected void generateStars() throws StarGeneratorException {
 
     Sector A1 = sectorsStructure[0][0];
     int nbStars = config.getStarsBySector();
@@ -94,7 +93,7 @@ public class GalaxyGeneratorTinySizeImpl extends GalaxyGenerator {
 
       starG = StarGeneratorFactory.getInstance().getGenerator(
               StarGeneratorFactory.STANDARD,
-              new StarGeneratorConfig("src/main/resources/star-generator.properties")
+              GameSettings.getInstance().getStarGeneratorSettings()
       );
 
       // generate star stats & name

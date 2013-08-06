@@ -2,6 +2,8 @@ package fr.nemak3.core;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: marco
@@ -10,37 +12,47 @@ import org.jetbrains.annotations.NotNull;
  * To change this template use File | Settings | File Templates.
  */
 public class Player extends GameObject {
-  @NotNull
-  private String firstName;
-  @NotNull
-  private String lastName;
-  @NotNull
-  private String email;
+    @NotNull
+    private String firstName;
+    @NotNull
+    private String lastName;
+    @NotNull
+    private String email;
 
-  @NotNull
-  public String getFirstName() {
-    return firstName;
-  }
+    List<Commander> commanderList;
 
-  public void setFirstName(@NotNull String firstName) {
-    this.firstName = firstName;
-  }
+    @NotNull
+    public String getFirstName() {
+        return firstName;
+    }
 
-  @NotNull
-  public String getLastName() {
-    return lastName;
-  }
+    public void setFirstName(@NotNull String firstName) {
+        this.firstName = firstName;
+    }
 
-  public void setLastName(@NotNull String lastName) {
-    this.lastName = lastName;
-  }
+    @NotNull
+    public String getLastName() {
+        return lastName;
+    }
 
-  @NotNull
-  public String getEmail() {
-    return email;
-  }
+    public void setLastName(@NotNull String lastName) {
+        this.lastName = lastName;
+    }
 
-  public void setEmail(@NotNull String email) {
-    this.email = email;
-  }
+    @NotNull
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(@NotNull String email) {
+        this.email = email;
+    }
+
+    public List<Commander> getCommanderList() {
+        return commanderList;
+    }
+
+    public void setCommanderList(List<Commander> commanderList) {
+        this.commanderList = commanderList;
+    }
 }

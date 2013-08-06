@@ -3,17 +3,15 @@ package fr.nemak3.server.map;
 
 import fr.nemak3.core.map.Star;
 import fr.nemak3.tools.RandomGenerator;
-import org.apache.commons.configuration.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class StarGenerator {
 
   @NotNull
-  protected StarGeneratorConfig config;
+  protected StarGeneratorSettings config;
 
-  protected StarGenerator(@NotNull StarGeneratorConfig config) throws ConfigurationException {
+  protected StarGenerator(@NotNull StarGeneratorSettings config) {
     this.config = config;
-    this.config.load();
   }
 
   abstract Star generate() throws StarGeneratorException;

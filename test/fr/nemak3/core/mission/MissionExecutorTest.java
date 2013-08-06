@@ -2,9 +2,8 @@ package fr.nemak3.core.mission;
 
 import fr.nemak3.core.map.Star;
 import fr.nemak3.core.map.StarStatus;
-import org.apache.log4j.Logger;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,9 +12,7 @@ import org.testng.annotations.Test;
  * Time: 16:44
  * To change this template use File | Settings | File Templates.
  */
-@Test
 public class MissionExecutorTest {
-  private static final Logger logger = Logger.getLogger(MissionExecutorTest.class);
 
   @Test
   public void calculateNovarsProfitTest() {
@@ -130,7 +127,7 @@ public class MissionExecutorTest {
     COMM.setCommanderOwnerId(38);
     COMM.setStarTargetId(5);
     Star star = new Star();
-    star.setId(5);
+    star.setId(5l);
     star.setStarStatus(StarStatus.PEACE);
     star.setHabitabilityRate(5);
 
