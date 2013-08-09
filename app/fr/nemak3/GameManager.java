@@ -6,13 +6,7 @@ import fr.nemak3.core.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Patricia
- * Date: 04/08/13
- * Time: 20:14
- * To change this template use File | Settings | File Templates.
- */
+
 public class GameManager {
 
     private static GameManager instance = new GameManager();
@@ -34,7 +28,7 @@ public class GameManager {
     }
 
     public List<Game> listGames(Player gameOwnerToto) {
-        List<Game> gameList = new ArrayList<>();
+        List<Game> gameList = new ArrayList<Game>();
 
         return gameList;
     }

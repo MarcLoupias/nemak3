@@ -6,13 +6,6 @@ import play.db.jpa.JPA;
 import javax.persistence.Query;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: marco
- * Date: 22/07/13
- * Time: 15:35
- * To change this template use File | Settings | File Templates.
- */
 public class Dao {
     private static Dao instance = new Dao();
 
@@ -46,6 +39,12 @@ public class Dao {
 
     public <T> List<T> queryFor(Class<T> clazz, String jpaQL, Object... jpaParametersValues) {
         return (List<T>) internalQueryFactory(jpaQL, jpaParametersValues).getResultList();
+    }
+
+    public <T> List<T> nativeQuery(Class<T> clazz, String nativeSqlQuery)
+    {
+        Query query = JPA.em().createNativeQuery(nativeSqlQuery,clazz);
+        return (List<T>)query.getResultList();
     }
 
     public GameObject store(GameObject elt) {
