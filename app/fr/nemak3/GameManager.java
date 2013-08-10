@@ -16,7 +16,7 @@ public class GameManager {
     }
 
     public Game createGame() {
-        return new Game();  //To change body of created methods use File | Settings | File Templates.
+        return new Game();
     }
 
     public Game loadGame(Player gameOwner, String gameName) {
@@ -27,7 +27,7 @@ public class GameManager {
         return game;
     }
 
-    public List<Game> listGames(Player gameOwnerToto) {
+    public List<Game> listGames(Player gameOwner) {
         List<Game> gameList = new ArrayList<Game>();
 
         return gameList;
