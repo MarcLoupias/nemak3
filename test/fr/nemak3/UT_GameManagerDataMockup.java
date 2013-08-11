@@ -6,16 +6,14 @@ import fr.nemak3.core.Player;
 import fr.nemak3.core.map.Galaxy;
 import fr.nemak3.core.map.MapPosition;
 import fr.nemak3.core.map.Star;
-import fr.nemak3.core.map.StarStatus;
-
 import java.util.List;
 import java.util.Map;
 
 public class UT_GameManagerDataMockup extends UT_DataMockupBuilder {
 
-    protected static Star starRAHEJ = starFactory(1l, "RAHEJ", new MapPosition(100, 100), 2000, 3000, 200, 700, 545, StarStatus.PEACE, 80, 1345, 6.90, 6, false, false);
-    protected static Star starJYHIK_osium = starFactory(2l, "JYHIK", new MapPosition(100, 200), 2000, 3000, 200, 700, 545, StarStatus.PEACE, 80, 1345, 6.90, 6, false, true);
-    protected static Star starMOHIT_klunk = starFactory(3l, "MOHIT", new MapPosition(100, 300), 2000, 3000, 200, 700, 545, StarStatus.PEACE, 80, 1345, 6.90, 6, true, false);
+    protected static Star starRAHEJ = starFactory(1l, "RAHEJ", new MapPosition(100, 100), 2000, 3000, 200, 700, 545, Star.StarStatus.PEACE, 80, 1345, 6.90, 6, false, false);
+    protected static Star starJYHIK_osium = starFactory(2l, "JYHIK", new MapPosition(100, 200), 2000, 3000, 200, 700, 545, Star.StarStatus.PEACE, 80, 1345, 6.90, 6, false, true);
+    protected static Star starMOHIT_klunk = starFactory(3l, "MOHIT", new MapPosition(100, 300), 2000, 3000, 200, 700, 545, Star.StarStatus.PEACE, 80, 1345, 6.90, 6, true, false);
     protected static Map<String, Star> starMap = starMapFactory(starRAHEJ, starJYHIK_osium, starMOHIT_klunk);
     protected static Galaxy galaxySeshwan = galaxyFactory(1l, 1000, 1000, "Seshwan", starMap);
 

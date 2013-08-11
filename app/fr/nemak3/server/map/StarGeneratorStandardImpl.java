@@ -2,7 +2,6 @@ package fr.nemak3.server.map;
 
 
 import fr.nemak3.core.map.Star;
-import fr.nemak3.core.map.StarStatus;
 import fr.nemak3.tools.RandomGenerator;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,7 +27,7 @@ public class StarGeneratorStandardImpl extends StarGenerator {
 
     // social
     double probaStatus = RandomGenerator.generateDouble(0.0, 100.0);
-    s.setStarStatus( (probaStatus <= config.getStarStatusProbability()) ? StarStatus.PEACE : StarStatus.WAR);
+    s.setStarStatus( (probaStatus <= config.getStarStatusProbability()) ? Star.StarStatus.PEACE : Star.StarStatus.WAR);
     s.setHappinessRate(RandomGenerator.generateInt(config.getHappinessRateMin(), config.getHappinessRateMax()));
     s.setAuthorityRate(RandomGenerator.generateInt(config.getAuthorityRateMin(), config.getAuthorityRateMax()));
 

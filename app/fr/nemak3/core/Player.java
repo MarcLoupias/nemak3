@@ -2,8 +2,15 @@ package fr.nemak3.core;
 
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nullable;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.Collection;
 import java.util.List;
 
+@Entity
 public class Player extends GameObject {
     @NotNull
     private String firstName;
@@ -12,7 +19,17 @@ public class Player extends GameObject {
     @NotNull
     private String email;
 
-    List<Commander> commanderList;
+    @Nullable
+    @OneToMany(mappedBy = "playerOwner")
+    private Collection<Commander> commanders;
+
+    @Nullable
+    @OneToMany(mappedBy = "gameOwner")
+    private Collection<Game> ownedGames;
+
+    @Nullable
+    @ManyToMany
+    private Collection<Game> playedGames;
 
     @NotNull
     public String getFirstName() {
@@ -41,11 +58,30 @@ public class Player extends GameObject {
         this.email = email;
     }
 
-    public List<Commander> getCommanderList() {
-        return commanderList;
+    @Nullable
+    public Collection<Commander> getCommanders() {
+        return commanders;
     }
 
-    public void setCommanderList(List<Commander> commanderList) {
-        this.commanderList = commanderList;
+    public void setCommanders(@Nullable Collection<Commander> commanders) {
+        this.commanders = commanders;
+    }
+
+    @Nullable
+    public Collection<Game> getOwnedGames() {
+        return ownedGames;
+    }
+
+    public void setOwnedGames(@Nullable Collection<Game> ownedGames) {
+        this.ownedGames = ownedGames;
+    }
+
+    @Nullable
+    public Collection<Game> getPlayedGames() {
+        return playedGames;
+    }
+
+    public void setPlayedGames(@Nullable Collection<Game> playedGames) {
+        this.playedGames = playedGames;
     }
 }

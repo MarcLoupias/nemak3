@@ -2,6 +2,9 @@ package fr.nemak3.core.map;
 
 import org.jetbrains.annotations.NotNull;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+
 /**
  *  A      B
  *   +----+
@@ -10,15 +13,20 @@ import org.jetbrains.annotations.NotNull;
  *   +----+
  *  D      C
  */
+@Embeddable
 public class MapArea {
 
   @NotNull
+  @Embedded
   private MapPosition pA;
   @NotNull
+  @Embedded
   private MapPosition pB;
   @NotNull
+  @Embedded
   private MapPosition pC;
   @NotNull
+  @Embedded
   private MapPosition pD;
 
   @NotNull
@@ -41,7 +49,7 @@ public class MapArea {
     return pD;
   }
 
-  private MapArea(){
+  public MapArea(){
 
   }
 

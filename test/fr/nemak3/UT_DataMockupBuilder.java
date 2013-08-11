@@ -6,7 +6,6 @@ import fr.nemak3.core.Player;
 import fr.nemak3.core.map.Galaxy;
 import fr.nemak3.core.map.MapPosition;
 import fr.nemak3.core.map.Star;
-import fr.nemak3.core.map.StarStatus;
 
 import java.util.*;
 
@@ -18,7 +17,7 @@ public class UT_DataMockupBuilder {
         g.setGalaxy(galaxy);
         g.setGameOwner(gameOwner);
         g.setName(name);
-        g.setPlayerList(playerList);
+        //g.setPlayerList(playerList);
         return g;
     }
 
@@ -27,8 +26,8 @@ public class UT_DataMockupBuilder {
         g.setId(id);
         g.setHeight(height);
         g.setWidth(width);
-        g.setSectorsIdList(null);
-        g.setStarsIdMap(starsIdMap);
+       // g.setSectorsIdList(null);
+        g.setStars(starsIdMap);
         return g;
     }
 
@@ -41,7 +40,7 @@ public class UT_DataMockupBuilder {
     }
 
     protected static Star starFactory(
-            Long id, String name, MapPosition pos, int nbWarriors, int nbLasers, int nbMissiles, int mass, int pop, StarStatus status,
+            Long id, String name, MapPosition pos, int nbWarriors, int nbLasers, int nbMissiles, int mass, int pop, Star.StarStatus status,
             int happinessRate, int authorityRate, double devRate, int habRate, boolean klunk, boolean osium) {
         Star s = new Star();
         s.setId(id);
@@ -97,7 +96,7 @@ public class UT_DataMockupBuilder {
         p.setEmail(email);
         p.setFirstName(firstName);
         p.setLastName(lastName);
-        p.setCommanderList(cmdtList);
+        //p.setCommanderList(cmdtList);
         return p;
     }
 }

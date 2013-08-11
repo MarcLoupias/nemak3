@@ -1,164 +1,197 @@
 package fr.nemak3.core.map;
 
 
+import fr.nemak3.core.Commander;
 import fr.nemak3.core.GameObject;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nullable;
+import javax.persistence.*;
+
+@Entity
 public class Star extends GameObject {
 
-  @NotNull
-  private String name;
+    public enum StarStatus {
+        WAR, PEACE
+    }
 
-  @NotNull
-  private MapPosition position;
+    @NotNull
+    @ManyToOne
+    private Galaxy galaxy;
 
-  private int idSector;
+    @NotNull
+    @ManyToOne
+    private Sector sector;
 
-  private int nbWarriors;
-  private int nbLasers;
-  private int nbMissiles;
+    @NotNull
+    @Column(length = 5)
+    private String name;
 
-  private int mass;
-  private int pop;
+    @Nullable
+    @ManyToOne
+    private Commander commanderOwner;
 
-  private StarStatus starStatus;
-  private int happinessRate;
-  private int authorityRate;
+    @NotNull
+    @Embedded
+    private MapPosition position;
 
-  private double developmentRate;
-  private int habitabilityRate;
-  private boolean klunkDeposit;
-  private boolean osiumDeposit;
+    private int nbWarriors;
+    private int nbLasers;
+    private int nbMissiles;
 
-  private long commanderOwnerId;
+    private int mass;
+    private int pop;
 
-  @NotNull
-  public String getName() {
-    return name;
-  }
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private StarStatus starStatus;
+    private int happinessRate;
+    private int authorityRate;
 
-  public void setName(@NotNull String name) {
-    this.name = name;
-  }
+    private double developmentRate;
+    private int habitabilityRate;
+    private boolean klunkDeposit;
+    private boolean osiumDeposit;
 
-  @NotNull
-  public MapPosition getPosition() {
-    return position;
-  }
+    @NotNull
+    public String getName() {
+        return name;
+    }
 
-  public void setPosition(@NotNull MapPosition position) {
-    this.position = position;
-  }
+    public void setName(@NotNull String name) {
+        this.name = name;
+    }
 
-  public int getIdSector() {
-    return idSector;
-  }
+    @NotNull
+    public Galaxy getGalaxy() {
+        return galaxy;
+    }
 
-  public void setIdSector(int idSector) {
-    this.idSector = idSector;
-  }
+    public void setGalaxy(@NotNull Galaxy galaxy) {
+        this.galaxy = galaxy;
+    }
 
-  public int getNbWarriors() {
-    return nbWarriors;
-  }
+    @NotNull
+    public Sector getSector() {
+        return sector;
+    }
 
-  public void setNbWarriors(int nbWarriors) {
-    this.nbWarriors = nbWarriors;
-  }
+    public void setSector(@NotNull Sector sector) {
+        this.sector = sector;
+    }
 
-  public int getNbLasers() {
-    return nbLasers;
-  }
+    @Nullable
+    public Commander getCommanderOwner() {
+        return commanderOwner;
+    }
 
-  public void setNbLasers(int nbLasers) {
-    this.nbLasers = nbLasers;
-  }
+    public void setCommanderOwner(@Nullable Commander commanderOwner) {
+        this.commanderOwner = commanderOwner;
+    }
 
-  public int getNbMissiles() {
-    return nbMissiles;
-  }
+    @NotNull
+    public MapPosition getPosition() {
+        return position;
+    }
 
-  public void setNbMissiles(int nbMissiles) {
-    this.nbMissiles = nbMissiles;
-  }
+    public void setPosition(@NotNull MapPosition position) {
+        this.position = position;
+    }
 
-  public int getMass() {
-    return mass;
-  }
+    public int getNbWarriors() {
+        return nbWarriors;
+    }
 
-  public void setMass(int mass) {
-    this.mass = mass;
-  }
+    public void setNbWarriors(int nbWarriors) {
+        this.nbWarriors = nbWarriors;
+    }
 
-  public int getPop() {
-    return pop;
-  }
+    public int getNbLasers() {
+        return nbLasers;
+    }
 
-  public void setPop(int pop) {
-    this.pop = pop;
-  }
+    public void setNbLasers(int nbLasers) {
+        this.nbLasers = nbLasers;
+    }
 
-  public StarStatus getStarStatus() {
-    return starStatus;
-  }
+    public int getNbMissiles() {
+        return nbMissiles;
+    }
 
-  public void setStarStatus(StarStatus starStatus) {
-    this.starStatus = starStatus;
-  }
+    public void setNbMissiles(int nbMissiles) {
+        this.nbMissiles = nbMissiles;
+    }
 
-  public int getHappinessRate() {
-    return happinessRate;
-  }
+    public int getMass() {
+        return mass;
+    }
 
-  public void setHappinessRate(int happinessRate) {
-    this.happinessRate = happinessRate;
-  }
+    public void setMass(int mass) {
+        this.mass = mass;
+    }
 
-  public int getAuthorityRate() {
-    return authorityRate;
-  }
+    public int getPop() {
+        return pop;
+    }
 
-  public void setAuthorityRate(int authorityRate) {
-    this.authorityRate = authorityRate;
-  }
+    public void setPop(int pop) {
+        this.pop = pop;
+    }
 
-  public double getDevelopmentRate() {
-    return developmentRate;
-  }
+    public StarStatus getStarStatus() {
+        return starStatus;
+    }
 
-  public void setDevelopmentRate(double developmentRate) {
-    this.developmentRate = developmentRate;
-  }
+    public void setStarStatus(StarStatus starStatus) {
+        this.starStatus = starStatus;
+    }
 
-  public int getHabitabilityRate() {
-    return habitabilityRate;
-  }
+    public int getHappinessRate() {
+        return happinessRate;
+    }
 
-  public void setHabitabilityRate(int habitabilityRate) {
-    this.habitabilityRate = habitabilityRate;
-  }
+    public void setHappinessRate(int happinessRate) {
+        this.happinessRate = happinessRate;
+    }
 
-  public boolean isKlunkDeposit() {
-    return klunkDeposit;
-  }
+    public int getAuthorityRate() {
+        return authorityRate;
+    }
 
-  public void setKlunkDeposit(boolean klunkDeposit) {
-    this.klunkDeposit = klunkDeposit;
-  }
+    public void setAuthorityRate(int authorityRate) {
+        this.authorityRate = authorityRate;
+    }
 
-  public boolean isOsiumDeposit() {
-    return osiumDeposit;
-  }
+    public double getDevelopmentRate() {
+        return developmentRate;
+    }
 
-  public void setOsiumDeposit(boolean osiumDeposit) {
-    this.osiumDeposit = osiumDeposit;
-  }
+    public void setDevelopmentRate(double developmentRate) {
+        this.developmentRate = developmentRate;
+    }
 
-  public long getCommanderOwnerId() {
-    return commanderOwnerId;
-  }
+    public int getHabitabilityRate() {
+        return habitabilityRate;
+    }
 
-  public void setCommanderOwnerId(long commanderOwnerId) {
-    this.commanderOwnerId = commanderOwnerId;
-  }
+    public void setHabitabilityRate(int habitabilityRate) {
+        this.habitabilityRate = habitabilityRate;
+    }
+
+    public boolean isKlunkDeposit() {
+        return klunkDeposit;
+    }
+
+    public void setKlunkDeposit(boolean klunkDeposit) {
+        this.klunkDeposit = klunkDeposit;
+    }
+
+    public boolean isOsiumDeposit() {
+        return osiumDeposit;
+    }
+
+    public void setOsiumDeposit(boolean osiumDeposit) {
+        this.osiumDeposit = osiumDeposit;
+    }
+
 }

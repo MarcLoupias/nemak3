@@ -22,7 +22,7 @@ public class UT_GameManager extends UT_GameManagerDataMockup {
 
     @Test
     public void testLoadGame() {
-
+        Game game = GameManager.getInstance().loadGame(gameOwnerToto, gameTest.getName());
     }
 
     @Test

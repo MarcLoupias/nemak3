@@ -4,45 +4,71 @@ package fr.nemak3.core.map;
 import fr.nemak3.core.GameObject;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.MapKeyColumn;
+import javax.persistence.OneToMany;
 import java.util.Map;
 
+@Entity
 public class Sector extends GameObject {
 
-  @NotNull
-  private String name;
-  @NotNull
-  private MapArea sectorArea;
-  @NotNull
-  private Map<String, Star> starsIdMap = new HashMap<String, Star>();
+    public enum SectorType {
+        STANDARD,
+        GALAXY_CORE,
+        INNER_CIRCLE,
+        OUTER_CIRCLE,
+        EXTERIOR_BORDER
+    }
 
-  //private SectorType sectorType;
+    @NotNull
+    private String name;
 
+    //@NotNull
+    //@Embedded
+    //private MapArea sectorArea;
 
-  @NotNull
-  public String getName() {
-    return name;
-  }
+    @NotNull
+    @OneToMany(mappedBy = "sector")
+    @MapKeyColumn(name="name")
+    private Map<String, Star> starsMap;
 
-  public void setName(@NotNull String name) {
-    this.name = name;
-  }
+    @NotNull
+    private SectorType sectorType;
 
-  @NotNull
-  public MapArea getSectorArea() {
-    return sectorArea;
-  }
+    @NotNull
+    public String getName() {
+        return name;
+    }
 
-  public void setSectorArea(@NotNull MapArea sectorArea) {
-    this.sectorArea = sectorArea;
-  }
+    public void setName(@NotNull String name) {
+        this.name = name;
+    }
 
-  @NotNull
-  public Map<String, Star> getStarsIdMap() {
-    return starsIdMap;
-  }
+    /*@NotNull
+    public MapArea getSectorArea() {
+        return sectorArea;
+    }
 
-  public void setStarsIdMap(@NotNull Map<String, Star> starsIdMap) {
-    this.starsIdMap = starsIdMap;
-  }
+    public void setSectorArea(@NotNull MapArea sectorArea) {
+        this.sectorArea = sectorArea;
+    }*/
+
+    @NotNull
+    public Map<String, Star> getStarsMap() {
+        return starsMap;
+    }
+
+    public void setStarsMap(@NotNull Map<String, Star> starsMap) {
+        this.starsMap = starsMap;
+    }
+
+    @NotNull
+    public SectorType getSectorType() {
+        return sectorType;
+    }
+
+    public void setSectorType(@NotNull SectorType sectorType) {
+        this.sectorType = sectorType;
+    }
 }

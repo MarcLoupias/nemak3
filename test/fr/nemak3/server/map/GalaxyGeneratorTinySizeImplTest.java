@@ -59,9 +59,9 @@ public class GalaxyGeneratorTinySizeImplTest {
             Assert.fail("Failed generate galaxy from GalaxyGeneratorFactory.TINY_SIZE " + e.getMessage());
         }
 
-        Assert.assertNotNull(g.getSectorsIdList());
-        Assert.assertNotNull(g.getStarsIdMap());
-        Assert.assertEquals(g.getStarsIdMap().values().size(), 100);
+        //Assert.assertNotNull(g.getSectorsIdList());
+        Assert.assertNotNull(g.getStars());
+        Assert.assertEquals(g.getStars().values().size(), 100);
 
         GalaxyMapJpegCreator jpeg = new GalaxyMapJpegCreator(g, "galaxy-map.jpg");
         try {

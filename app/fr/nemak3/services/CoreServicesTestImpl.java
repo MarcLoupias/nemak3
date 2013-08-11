@@ -1,7 +1,6 @@
 package fr.nemak3.services;
 
 import fr.nemak3.core.map.Star;
-import fr.nemak3.core.map.StarStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +25,7 @@ public class CoreServicesTestImpl implements CoreServicesI {
     s.setNbWarriors(3000);
     s.setNbLasers(2000);
     s.setNbMissiles(150);
-    s.setStarStatus(StarStatus.PEACE);
+    s.setStarStatus(Star.StarStatus.PEACE);
     starList.add(s);
   }
 

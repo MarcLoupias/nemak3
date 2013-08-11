@@ -1,6 +1,7 @@
 package fr.nemak3.db;
 
 import fr.nemak3.core.GameObject;
+import org.jetbrains.annotations.NotNull;
 import play.db.jpa.JPA;
 
 import javax.persistence.Query;
@@ -17,19 +18,19 @@ public class Dao {
 
     }
 
-    public <T extends GameObject> T load(Class<T> clazz, Long id) {
+    public <T extends GameObject> T load(@NotNull Class<T> clazz, @NotNull Long id) {
         return JPA.em().find(clazz, id);
     }
 
-    public <T extends GameObject> List<T> loadAll(Class<T> clazz) {
+    public <T extends GameObject> List<T> loadAll(@NotNull Class<T> clazz) {
         return JPA.em().createQuery("from " + clazz.getName()).getResultList();
     }
 
-    public <T> T querySingleFor(Class<T> clazz, String jpaQL, Object... caleIdList) {
-        return (T) internalQueryFactory(jpaQL, caleIdList).getSingleResult();
+    public <T> T querySingleFor(@NotNull Class<T> clazz, @NotNull String jpaQL, @NotNull Object... idList) {
+        return (T) internalQueryFactory(jpaQL, idList).getSingleResult();
     }
 
-    private Query internalQueryFactory(String jpaQL, Object[] jpaParametersValues) {
+    private Query internalQueryFactory(@NotNull String jpaQL, @NotNull Object[] jpaParametersValues) {
         Query query = JPA.em().createQuery(jpaQL);
         for (int i = 0; i < jpaParametersValues.length; i++) {
             query.setParameter(i + 1, jpaParametersValues[i]);
@@ -37,25 +38,25 @@ public class Dao {
         return query;
     }
 
-    public <T> List<T> queryFor(Class<T> clazz, String jpaQL, Object... jpaParametersValues) {
+    public <T> List<T> queryFor(@NotNull Class<T> clazz, @NotNull String jpaQL, @NotNull Object... jpaParametersValues) {
         return (List<T>) internalQueryFactory(jpaQL, jpaParametersValues).getResultList();
     }
 
-    public <T> List<T> nativeQuery(Class<T> clazz, String nativeSqlQuery)
+    public <T> List<T> nativeQuery(@NotNull Class<T> clazz, @NotNull String nativeSqlQuery)
     {
         Query query = JPA.em().createNativeQuery(nativeSqlQuery,clazz);
         return (List<T>)query.getResultList();
     }
 
-    public GameObject store(GameObject elt) {
+    public GameObject store(@NotNull GameObject elt) {
         return JPA.em().merge(elt);
     }
 
-    public void saveNew(GameObject elt) {
+    public void saveNew(@NotNull GameObject elt) {
         JPA.em().persist(elt);
     }
 
-    public void remove(GameObject elt) {
+    public void remove(@NotNull GameObject elt) {
         JPA.em().remove(elt);
     }
 }

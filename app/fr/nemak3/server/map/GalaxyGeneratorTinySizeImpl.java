@@ -74,7 +74,7 @@ public class GalaxyGeneratorTinySizeImpl extends GalaxyGenerator {
       if(i > 1){
         boolean ok = true;
         while(ok){
-          for(Star s : galaxy.getStarsIdMap().values()){
+          for(Star s : galaxy.getStars().values()){
             if(s.getPosition().isPositionExist(starPos, 100)){
               starPos = new MapPosition(
                       RandomGenerator.generateInt( (baseXMin + 1), (baseXMax - 1)),
@@ -99,15 +99,15 @@ public class GalaxyGeneratorTinySizeImpl extends GalaxyGenerator {
       // generate star stats & name
 
       s = starG.generate();
-      while(galaxy.getStarsIdMap().get(s.getName()) != null){
+      while(galaxy.getStars().get(s.getName()) != null){
         s.setName(starG.generateStarName());
       }
       s.setPosition(starPos);
 
       // add star
 
-      galaxy.getStarsIdMap().put(s.getName(), s);
-      A1.getStarsIdMap().put(s.getName(), s);
+      galaxy.getStars().put(s.getName(), s);
+      A1.getStarsMap().put(s.getName(), s);
     }
   }
 }

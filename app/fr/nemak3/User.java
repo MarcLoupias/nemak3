@@ -1,4 +1,4 @@
-package models;
+package fr.nemak3;
 
 import fr.nemak3.core.GameObject;
 

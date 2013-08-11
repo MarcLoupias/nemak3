@@ -1,7 +1,6 @@
 package fr.nemak3.core.mission;
 
 import fr.nemak3.core.map.Star;
-import fr.nemak3.core.map.StarStatus;
 
 public abstract class MissionExecutor {
   public final static int MISSION_COMM = 1;
@@ -177,10 +176,10 @@ public abstract class MissionExecutor {
 
   protected int calculateShuttlesLossesRate(MissionResult missionResult, Star star) {
     int lossesRate = this.getMissionShuttlesLossesBaseRate();
-    if(star.getStarStatus() == StarStatus.WAR){
+    if(star.getStarStatus() == Star.StarStatus.WAR){
       lossesRate += this.getStarStatusInfluenceOnShuttlesLossesRate();
     }
-    if(star.getCommanderOwnerId() == missionResult.getCommanderOwnerId()){
+    if(star.getCommanderOwner().getId() == missionResult.getCommanderOwnerId()){
       lossesRate -= this.getStarOwnershipInfluenceOnShuttlesLossesRate();
     }
     if(star.getHabitabilityRate() <=4){

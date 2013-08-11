@@ -41,7 +41,7 @@ public class GalaxyMapJpegCreator extends JPanel {
     g.setColor(Color.white);
     g.fillRect(1, 1, galaxy.getWidth(), galaxy.getHeight());
 
-    for (Star s : galaxy.getStarsIdMap().values()){
+    for (Star s : galaxy.getStars().values()){
       x = s.getPosition().getX();
       y = s.getPosition().getY();
       name = s.getName();

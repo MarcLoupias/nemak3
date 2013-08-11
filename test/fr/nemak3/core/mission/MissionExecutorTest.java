@@ -1,7 +1,6 @@
 package fr.nemak3.core.mission;
 
 import fr.nemak3.core.map.Star;
-import fr.nemak3.core.map.StarStatus;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -121,7 +120,7 @@ public class MissionExecutorTest {
     COMM.setStarTargetId(5);
     Star star = new Star();
     star.setId(5l);
-    star.setStarStatus(StarStatus.PEACE);
+    star.setStarStatus(Star.StarStatus.PEACE);
     star.setHabitabilityRate(5);
 
     int lossesRate = exe.calculateShuttlesLossesRate(COMM, star);
