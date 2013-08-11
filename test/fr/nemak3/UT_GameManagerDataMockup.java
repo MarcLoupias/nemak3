@@ -11,13 +11,6 @@ import fr.nemak3.core.map.StarStatus;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created with IntelliJ IDEA.
- * User: marco
- * Date: 10/08/13
- * Time: 13:31
- * To change this template use File | Settings | File Templates.
- */
 public class UT_GameManagerDataMockup extends UT_DataMockupBuilder {
 
     protected static Star starRAHEJ = starFactory(1l, "RAHEJ", new MapPosition(100, 100), 2000, 3000, 200, 700, 545, StarStatus.PEACE, 80, 1345, 6.90, 6, false, false);

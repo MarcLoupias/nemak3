@@ -4,13 +4,6 @@ import fr.nemak3.server.map.GalaxyGeneratorSettings;
 import fr.nemak3.server.map.StarGeneratorSettings;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created with IntelliJ IDEA.
- * User: marco
- * Date: 25/06/13
- * Time: 23:56
- * To change this template use File | Settings | File Templates.
- */
 public class GameSettings extends Game {
     private static final GameSettings instance = new GameSettings();
 

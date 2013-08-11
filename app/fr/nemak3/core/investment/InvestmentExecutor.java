@@ -1,12 +1,5 @@
 package fr.nemak3.core.investment;
 
-/**
- * Created with IntelliJ IDEA.
- * User: marco
- * Date: 26/06/13
- * Time: 00:07
- * To change this template use File | Settings | File Templates.
- */
 public class InvestmentExecutor {
   public static final int ARMOURING = 1;
   public static final int COUNTER_INTELLIGENCE = 2;

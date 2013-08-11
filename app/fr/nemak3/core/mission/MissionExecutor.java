@@ -3,13 +3,6 @@ package fr.nemak3.core.mission;
 import fr.nemak3.core.map.Star;
 import fr.nemak3.core.map.StarStatus;
 
-/**
- * Created with IntelliJ IDEA.
- * User: marco
- * Date: 23/06/13
- * Time: 16:26
- * To change this template use File | Settings | File Templates.
- */
 public abstract class MissionExecutor {
   public final static int MISSION_COMM = 1;
   public final static int MISSION_PILL = 2;

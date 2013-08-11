@@ -5,14 +5,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import play.Logger;
 
-/**
- * Created with IntelliJ IDEA.
- * User: marco
- * Date: 23/06/13
- * Time: 19:07
- * To change this template use File | Settings | File Templates.
- */
-
 public class MissionExecutorCOMMImplTest {
 
     @Test

@@ -2,13 +2,6 @@ package fr.nemak3.core.mission;
 
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created with IntelliJ IDEA.
- * User: marco
- * Date: 26/01/13
- * Time: 15:09
- * To change this template use File | Settings | File Templates.
- */
 public abstract class Mission {
 
   private String missionName;

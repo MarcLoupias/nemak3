@@ -4,13 +4,6 @@ import fr.nemak3.core.GameObject;
 
 import javax.persistence.*;
 
-/**
- * Created with IntelliJ IDEA.
- * User: marco
- * Date: 21/07/13
- * Time: 19:53
- * To change this template use File | Settings | File Templates.
- */
 @Entity
 public class User extends GameObject {
 

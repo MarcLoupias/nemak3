@@ -4,13 +4,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: marco
- * Date: 26/01/13
- * Time: 15:01
- * To change this template use File | Settings | File Templates.
- */
 public class Player extends GameObject {
     @NotNull
     private String firstName;
