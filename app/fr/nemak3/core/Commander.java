@@ -29,6 +29,7 @@ public class Commander extends GameObject {
     private Player playerOwner;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private CommanderType commanderType;
 
     @Nullable
