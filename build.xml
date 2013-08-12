@@ -1,0 +1,50 @@
+<project name="Nemak Tools" basedir=".">
+    <description>
+        Nemak Tools
+    </description>
+
+    <property name="db.server.nemak" value="localhost"/>
+    <property name="db.name.nemak" value="nemakTest"/>
+    <property name="db.username.nemak" value="nemak_dev"/>
+
+    <!-- MySql -->
+    <property name="db.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+    <property name="db.jdbc.url" value="jdbc:mysql://${db.server.nemak}"/>
+
+    <property name="play.dir" value="C:/dev/play"/>
+
+    <path id="lib.runSql">
+        <fileset dir="${play.dir}/repository/cache/mysql/mysql-connector-java/jars">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="nemak">
+        <deltree dir="junit"/>
+    </target>
+
+    <target name="test-java" depends="nemak">
+        <exec executable="C:\dev\play\play.bat">
+            <arg value="test"/>
+        </exec>
+        <mkdir dir="junit/reports"/>
+        <junitreport todir="junit/reports" >
+            <fileset dir="./target/test-reports">
+                <include name="*.xml"/>
+            </fileset>
+            <report format="frames" todir="junit/reports"/>
+        </junitreport>
+    </target>
+
+    <target name="rebuildLocalNemakDB" description="Create nemak3 schema (after a drop if needed)">
+        <sql driver="${db.jdbc.driver}"
+             url="jdbc:mysql://localhost/"
+             userid="nemak_dev" password="nemak"
+             classpathref="lib.runSql" autocommit="true" print="true">
+            DROP DATABASE if exists ${db.name.nemak};
+            create DATABASE ${db.name.nemak};
+            GRANT ALL ON ${db.name.nemak}.* TO ${db.username.nemak}@'localhost' IDENTIFIED BY '${db.username.nemak}';
+            GRANT ALL ON ${db.name.nemak}.* TO ${db.username.nemak}@'127.0.0.1' IDENTIFIED BY '${db.username.nemak}';
+        </sql>
+    </target>
+</project>
