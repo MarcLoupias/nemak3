@@ -1,0 +1,43 @@
+Pallier 500
+Rayon EMADIS
+Puissance de 1 à 10
+Portée 3 A.L.
+Cible un commandant en particulier.
+Tir avant le déplacement.
+1 pt de puissance correspond à 100 Kg Comp. Elec. Et 100 Kg d'Erdividium.
+Réduit l'efficacité de tous les éléments du vaisseaux (Armes & Hommes) de 0.1 pt par pt de puissance.
+
+
+Pallier 700
+Rayon PHRYST
+Puissance de 1 à 50
+Portée 5 A.L.
+Cible une étoile.
+Tir après déplacement.
+1 pt de puissance correspond à 1 Kg de Kozium.
+Détruit un pourcentage d'hommes (hors Hommes non affectés) égal à la puissance du rayon pour tous les commandants présents sur l'étoile après déplacement.
+
+Pallier 1000
+Si % Slyrmes >= 20%
+Si possession de Klunk,
+apprends comment se servir du Maggnos contre ses ennemis.
+
+Pallier 1300
+NEFS
+
+Pallier 1600
+Canon galactique améliorié.
+Pertes de blindage + importante.
+Si perte de blindage, dégats + importants (fonction des dégats en blindage)
+
+Pallier 2000
+RAID, si la mission est la + importante en nb de navettes, le risque de passage de paix à guerre est de 100%
+
+Pallier 2300
+Lors de missions DEPI (Dépiégeage), % de chance de détruire le leurre étoile en fonction du % Slyrmes et Phryoriste.
+
+Pallier 2300 (ET Race principale Rogusk OU Militaire)
+Possiblité de poser un pisteur lors d'une opération commandos sur la cible.
+
+Pallier 2600
+Opérations commandos, nouvelle cible : Déplacement fusion.

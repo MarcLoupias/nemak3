@@ -1,0 +1,10 @@
+
+avant déplacement
+portee 3 AL
+vise un commandant.
+puisse de 1 à 10.
+100kg de CE et 100kg d'erdi par pt de puissance
+
+chaque pt de puissance fait baisser l'efficacité de tous les éléments du vaisseau (sauf les hommes affectés) de 0,1 pt.
+
+

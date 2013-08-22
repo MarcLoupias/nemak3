@@ -1,0 +1,11 @@
+
+
+shuttles
+cost is 10 minerals per unit
+
+lasers
+cost is 1 mineral per unit
+
+missiles
+cost is 1 electronic component & 7 minerals
+

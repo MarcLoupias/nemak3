@@ -1,0 +1,11 @@
+
+
+après déplacements
+portee 5 AL
+Puissance de 1 à 50.
+Cible une étoile.
+
+Tous les commandants situés sur l'étoile perdent puissance % de leurs hommes affectés.
+
+
+

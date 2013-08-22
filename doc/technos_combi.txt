@@ -1,0 +1,21 @@
+Pallier 300
+Téléporteur de ressources.
+
+Pallier 600
+Saut spatial
+
+Pallier 900
+TLD 26X, permet de protéger une étoile comme une mission de PROT normale quelque soit la distance.
+
+Pallier 1100
+Lors de missions d'EXTR ou PROS : 
+si étoile produit Klunk
+si Ouvriers eff >= 5.00
+si (nb navettes * eff) >= 400
+ALORS 1 chance sur 2 de gain Klunk = Eff Ouvriers
+
+Pallier 1400
+Dans liste des étoiles contrôlées, l'autorité apparaît.
+
+Pallier 1700
+Tir avec canons NEFs sans qu'ils s'endommagent.

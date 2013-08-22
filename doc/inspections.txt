@@ -1,0 +1,172 @@
+Rules :
+- Inspections are launched in parallel of missions, no mission on a star = no inspection available.
+- The shuttles qty is equal to the star mass, no less no more.
+- Inspections count as a mission to determine star status change.
+- Inspections have shuttle losses, as same as standard missions.
+
+Process :
+- Rangers eff affects inspection quality. If a bonus is given to commander, the bonus amout is related to quality. 
+- Quality = ranger eff.
+- If at least one shuttle turn back to the mothership, the inspection is successful.
+
+
+inspection def :
+type (see type list)
+duration (
+0 = permanent, [ never end, always the same ] 
+n = nb turns, [ stand for n turns, then a new inspection is generated ]
+-1 = until discover [ stand until a commander inspect it, then is generated ]
+-n = until discover, can be activated n times.
+)
+
+A generated inspection cannot be permanent.
+
+
+
+type list
+=========
+Negociations : (eff ranger * 10 = % reussite). Reussite auto si race principale adequate.
+Bonus race principale :
+gain * (1 + ((% sup à 50) / 10) 
+
+- Ruines Xarls 
+Vous trouvez sur une des planètes du système une ancienne colonie Xarl en ruine. Vos rangers découvrent divers disques de données parmis les décombres.
+Vous gagnez 3 * ranger eff pts de techno (random type)
+
+- Laboratoire Xarl
+Vos rangers ont découvert une colonie Xarl en activité.  
+	-- techno
+Gain de 3 * ranger eff pts de techno dans chaque type
+	-- crew eff
+Gain de ranger eff / 10 en eff savants
+	-- crew recrutment
+Gain de 500 * ranger eff savants eff 9.99
+	-- lasers efficiency
+Gain de ranger eff / 10 en eff lasers
+	-- missiles efficiency
+Gain de ranger eff / 10 en eff missiles
+
+- Colonie humaine
+gain de 2000 * ranger eff hommes non aff
+
+- Ecole de guerre Wrack
+	-- techno
+Gain de  1 * ranger eff pts de techno guerr
+	-- crew eff
+Gain de ranger eff / 10 en eff guerriers ou commandos
+	-- crew recrutment
+Gain de 500 * ranger eff (guerr ou commandos) eff 9.99
+
+- Centre de renseignement pnumens
+	-- crew eff
+Gain de ranger eff / 10 en eff espions
+	-- crew recrutment
+Gain de 500 * ranger eff espions eff 9.99
+	-- stars intelligence 
+Vos données radar concernant les étoiles sont mises à jour par les pnumens. Ranger eff * 4 étoiles prises au hasard sur votre carte existante sont maj.
+	-- fleet intelligence
+Vos données radar concernant les flottes sont mises à jour par les pnumens. Ranger eff * 2 nb fleet positionnées sur votre carte sont affichées comme si elles étaient dans votre range de vision.
+	-- techno
+Gain de  1 * ranger eff pts de techno def
+
+- Industries high tech Slyrmes
+	-- crew eff
+Gain de ranger eff / 10 en eff ingénieurs
+	-- crew recrutment
+Gain de 500 * ranger eff ingénieurs eff 9.99
+	-- shuttle efficiency
+Gain de ranger eff / 10 en eff shuttles
+	-- techno
+Gain de  1 * ranger eff pts de techno dans chaque branche
+
+- Temple Phryoristes
+	-- crew eff
+Gain de ranger eff / 10 en eff artificiers
+	-- crew recrutment
+Gain de 500 * ranger eff artificiers eff 9.99
+	-- Rites sacrés
+Les Phryioristes effectuent divers rites destinés à améliorer votre protection.
+Le blindage de votre flotte augmente de ranger eff * 10. 
+Si le blindage était déjà à 99.99, les phryoristes vous offrent eff ranger / 2 leurres.
+	-- techno
+Gain de  1 * ranger eff pts de techno def
+
+- Avant poste Viskmirs
+reussite nego automatique pour tout le monde
+	-- crew eff
+Gain de ranger eff / 10 en eff ranger
+	-- crew recrutment
+Gain de 500 * ranger eff ranger eff 9.99
+	-- partage de carte
+les viskmirs partagent leurs cartes galactiques avec vous. Une zone sur un rayon de 3 AL + (eff ranger / 4) est découverte. Le point de référence du cercle est l'étoile inspectée.
+	-- réparation gratuite
+Si au moins un module est saboté sur votre vaisseau, les viskmirs en réparent un au hasard. Sinon retirer un autre effet.
+	-- techno
+Gain de  1 * ranger eff pts de techno combi ou def
+
+- Concession minière Furtgauchts
+	-- crew eff
+Gain de ranger eff / 10 en eff ouvrier
+	-- crew recrutment
+Gain de 500 * ranger eff ouvrier eff 9.99
+	-- les furtgauchts vous offrent eff ranger / 2 koziums
+	-- les furtgauchts vous offrent eff ranger * 2 osium18
+	-- les furtgauchts vous offrent eff ranger * 10 erdividium
+	-- les furtgauchts vous offrent eff ranger * 10 klunk
+	-- techno
+Gain de  1 * ranger eff pts de techno combi
+
+
+- Campement Rogusk
+Si les négocations échouent, les rogusks tueront un % aléatoire des rangers envoyés en mission.
+	-- crew eff
+Gain de ranger eff / 10 en eff commandos
+	-- crew recrutment
+Gain de 500 * ranger eff commandos eff 9.99
+	-- techno
+Gain de  1 * ranger eff pts de techno guerr
+
+- Bazar Slunk
+	-- crew eff
+Gain de ranger eff / 10 en eff diplomates
+	-- crew recrutment
+Gain de 500 * ranger eff diplomates eff 9.99
+	-- marché
+Gain de 1000 * ranger eff novars
+
+- Cité Almarias
+	-- crew eff
+Gain de ranger eff / 10 en eff cooperants
+	-- crew recrutment
+Gain de 500 * ranger eff cooperants eff 9.99
+	-- Vous vous inspirez de l'organisation sociale des almarias pour l'appliquer à vos mondes. Votre autorité augmente sur toutes vos étoiles de eff ranger / 2 %
+
+- Arsenaux spatiaux (réparation) (PERMANENT)
+Ce système comporte un très grand nombre d'arsenaux spatiaux. Les arsenaux sont utilisés lors de la constructions de vaisseaux.
+Le coût de votre investissement en réparation est divisé par 2 si vous vous trouvez en orbite autour de l'étoile au début du tour.
+
+- Arsenaux spatiaux (navettes) (PERMANENT)
+Ce système comporte un très grand nombre d'arsenaux spatiaux. Les arsenaux sont utilisés lors de la constructions de vaisseaux.
+Le coût de construction des navettes est réduit de 50% si vous vous trouvez en orbite autour de cette étoile au début du tour.
+
+- Centre industriel (Lasers) (PERMANENT)
+Ce système comporte un très grand nombre d'industries.
+Le coût des constructions de lasers sont réduits de 50% si vous vous trouvez en orbite autour de cette étoile au début du tour.
+
+- Centre industriel (Missiles) (PERMANENT)
+Ce système comporte un très grand nombre d'industries.
+Le coût de construction en composantes électroniques et en minerais des missiles est divisé par 2 si vous vous trouvez en orbite autour de cette étoile au début du tour.
+
+- Trous noirs (PERMANENT)
+Vos rangers ont rencontré des pilotes de navettes dans les spatioports de l'étoile et ont appris l'existence d'un trou noir non loin d'ici.
+Si vous êtes en orbite autour de cette étoile au début du tour, une option apparaît sur votre feuille d'ordre vous permettant de pénétrer dans le trou noir.
+Les effets d'une telle action vous sont inconnus...
+(Effets : Téléporte toute la flotte sur une position aléatoire dans la galaxie. La flotte subit l'effet d'une Astex niveau 10 lors du trajet)
+
+- Systèmes de communication avancés (PERMANENT)
+les investissements effectués depuis cette étoile ont une portée à l'échelle de la galaxie.
+
+
+
+
+

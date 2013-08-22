@@ -1,0 +1,28 @@
+Pallier 200
+Radar à 3 AL
+Visu des 10 Commandants les + proches
+
+Pallier 400
+Possibilité de construire des leurres vaisseaux pour 1 kozium et 100 erdividiums. 5 leurres maxi.
+
+Pallier 600
+Radar à 4 AL
+Visu des 20 Commandants les + proches
+
+Pallier 800
+Radar liste 20 étoiles contre 10
+
+Pallier 1000
+Nb max de leurres vaisseaux passe à 9
+
+Pallier 1200
+Leurres étoiles 40% + efficaces
+
+Pallier 1500
+% de réussite des actions commandos sur son vaisseau – importantes.
+
+Pallier 1800
+Antennes espions + efficaces
+
+Pallier 2200
+Espionnage + efficace

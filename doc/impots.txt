@@ -1,0 +1,8 @@
+
+tx impot compris entre 0 et 5%
+
+gain = ( ( pop etoile * autorite ) / 5 ) / tx impots
+
+réduit le tx de satisfaction d'étoile si le tx d'impot est sup à 2%
+la reduction est de 1pt de satisfaction pour chaque dixième au dessus de 2%
+Ex, un tx de 3,5 reduit de 15 pts le tx de satisfaction.

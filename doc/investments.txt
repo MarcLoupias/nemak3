@@ -1,0 +1,62 @@
+Les investissements se font avec des novars.
+On peut effectuer 2 investissements par tour.
+La plupart des hommes influent sur les résultats des investissements (Cf l'équipage)
+
+Les investissements sont exécutés dans l'ordre donné par le commandant.
+Exception concernant les propagandes, sont exécutées a la fin de tous les investissements.
+Sont ensuite exécutées par ordre de puissance d'investissement. C'est à dire triée sur les novars investi par ordre décroissant.
+Une étoile prise par propagande lors ne peut plus être prise par propagande dans le même tour.
+
+- Blindage
+Permet d'augmenter le blindage du vaisseau. 10 novars pour 0.01 pt.
+
+- Efficacité Hommes Affectés
+1 type d'homme par investissement.
+
+Guerr : 0,5 novars / point d'efficacité / homme
+Diplo : 1 novars / point d'efficacité / homme
+Sava : 1,5 novars / point d'efficacité / homme
+Espi : 1,5 novars / point d'efficacité / homme
+Ouvr : 0,5 novars / point d'efficacité / homme
+Coop : 1 novars / point d'efficacité / homme
+Arti : 2 novars / point d'efficacité / homme
+Comm : 2,5 novars / point d'efficacité / homme
+Ingé : 1 novars / homme
+Rang : 0,5 novars / homme
+
+- Efficacité Armes
+1 type d'arme par investissement.
+
+Navettes : 10 novars / point d'efficacité / navette
+Lasers : 1 novars / point d'efficacité / laser
+Missiles : 7 novars / point d'efficacité / missile
+
+- Propagande
+Au prix d'une grande campagne de communication, vous essayez de convaincre les étoiles dans un rayon de 5 A.L. autour de votre vaisseau de vous rejoindre dans votre quête. Pour chaque étoile située dans le rayon, un test est effectué, s'il réussit, vous devenez pacifiquement le nouveau propriétaire de l'étoile.
+Plus vous investissez de novars, plus la propagande est efficace.
+Le calcul de réussite dépend aussi fortement de l'état de l'étoile, paix ou guerre, taux de satisfaction, taux d'autorité du propriétaire.
+
+- Contre-Espionnage
+Rend les espionnages sur votre vaisseau plus difficile pour ce tour.
+Plus vous investissez de novars, plus les espionnages seront difficiles pour ce tour.
+
+- Pacification
+Permet de pacifier vos étoiles en guerre. Plus vous investissez, plus vos étoiles en guerre ont de chance de passer en paix et plus vous pouvez toucher d'étoiles.
+50 novars par % de chance de pacifier. 1 etoile touchee par tranche de 1000 novars.
+
+- Technologies
+1 type de technologie par investissement.
+Le pt de techno coute 200 novars. Gain de 50 pts maximum soit 10 000 novars d'investissement max hors bonus/malus.
+Interdiction d'utiliser ses 2 investissements pour le même type de techno (controle à la saisie)
+
+- Développement
+Plus vous investissez de novars, plus les taux de développement, de satisfaction et d'autorités de toutes vos étoiles augmentent. Les effets sont répartis équitablement entre toutes vos étoiles.
+
+Par étoile, 100 novars investis donnent un gain de 0,01 pts de dev
+Par étoile, 10 novars investis donnent un gain de 1 pt d'autorité
+Max gain par étoile par investissement en tx de dev : 1,5	??? pourquoi foutre ???
+Max gain par étoile par investissement en autorité : 2000     	??? pourquoi foutre ???
+
+- Réparation
+Le nombre de novars à investir est inscrit automatiquement à la saisie des ordres. On répare tout ou rien.
+Les réparations agissent sur les dégats effectués par les opérations commandos.

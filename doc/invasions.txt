@@ -1,0 +1,48 @@
+
+puissance des armes :
+
+guerrier : 0.5
+laser : 1
+missile : 10
+
+navettes :
+des navettes sont requises pour débarquer les troupes (guerriers et lasers), les missiles sont tirés depuis le vaisseau mère.
+
+Ordre d'exécution :
+En cas de plusieurs invasions sur la mm étoile, la plus puissante des forces d'invasion est évaluée en 1er. Si elle échoue, la 2nde force la plus puissante peut tenter de prendre l'étoile, etc ...
+Lorsqu'une invasion est réussie, les autres invasions sont annulées.
+
+Résolution :
+calcul des puissances des forces attaquantes et des forces en défense en tenant compte des différents bonus.
+
+Phase de bombardement
+---------------------
+Les missiles sont tirés depuis le vaisseau mère assaillant sur le système ciblé. Ils visent d'abord les défenses orbitales (missiles et lasers) puis les troupes au sol (guerriers).
+Les défenseurs font de même et tirent sur les troupes d'invasions en approche.
+
+Phase d'assaut
+--------------
+Les navettes pénètrent dans le système visé et affrontent les défenses orbitales ayant survécu.
+Leur objectif est d'atterir sur les principales planètes du système afin d'y débarquer les guerriers pour démarrer la conquête terrestre.
+
+Combats terrestres
+------------------
+Les guerriers ont été débarqués au sol et se battent avec les guerriers défenseurs pour le contrôle des POI stratégiques de chaque planète.
+
+Calcul des pertes
+------------------
+
+Calcul des effets sur l'étoile
+------------------------------
+En fonction de la violence des combats (+ les combats sont acharnés, cad quand les forces de def et d'inv sont similaires,  + les dégats sur l'étoile sont importants), les tx d'hab et de dev chutent de 0 à 5 pts.
+
+
+
+
+
+1- déterminer l'initiative entre l'attaque et la défense :
+La technologie guerrière de l'attaquant est comparée à la technologie défensive du défenseur.
+Divers bonus sont appliqués (type de cmdt, races, etc ... )
+
+Le plus fort bénéficie de l'initative lors de la phase de bombardement.
+

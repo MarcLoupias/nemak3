@@ -1,0 +1,87 @@
+
+Règles :
+--------
+- les missions s'effectuent sur les 9 étoiles les plus proche du vaisseau mère.
+- chaque type de mission nécessite un type d'homme particulier. 10 hommes par navette envoyée.
+- chaque mission ramène 1pt de techno d'un seul type
+- les missions sont résolues étoile par étoile, par ordre décroissant du nombre de navettes (* eff). La mission du commandant envoyant le + de navettes est déclarée mission maitre (cf pts pirates / jug , ...)
+- les inspections sont des missions pour déterminer qui a la mission maitre
+- seule la mission mettre peut modifier le statut de l'étoile
+- toutes les missions qui ramènent du minerai ramène aussi du klunk et de l'osium si les conditions de bases sont remplies (prod étoile + required tech)
+- si aucune navette ne revient de mission, la mission ne ramène rien du tout mais les effets éventuels sur l'étoile cible sont appliqués.
+- Un commandant ayant un % dans la race de l'étoile reçoit un bonus multiplicateur aux gains (appliqué étape 6) à hauteur de son % de race (ex : mission sur une étoile wrack, le cmdt est wrack à 21%, ses gains sont multipliés par 1.21)
+
+Calcul des gains :
+------------------
+1- Chaque type de mission a un maximum de gain (dit "pallier") pour chaque ressource.
+2- Chaque ressource a un coefficient
+3- Calcul du gain pour chaque ressource = navettes * efficacité * coefRessource * coefTypeMission
+4- Le gain après coef ne peut pas dépasser le pallier.
+5- La moyenne des rapports entre les gains et les palliers de chaque ressource principale (novars, minerais, ce, erdi, hommes) détermine le taux de réussite de la mission
+6- Sur la base du gain après coef, on applique les bonus liés au type de commandant, aux pouvoirs de race, aux bonus de % de race, etc ... et à ceux de l'étoile (tx de dev, race de l'étoile)
+7- le tx de réussite de la mission détermine le nb de pts de tech gagné (0 = 0pt, 1 à 33 = 1pt, 34 à 66 = 2pts, 67 à 100 = 3pts)
+8- calcul des effets sur le star status
+9- calcul des effets sur les stats de l'étoile
+10- si étoile en guerre, gains divisés par 5
+11- si etoile pnumens et cmdt pas pnumens, gains = 0 mais effets pris en comptes
+12- calcul des pertes en navettes et hommes
+12(b)- si etoile sombre, pertes = 100%
+13- si pertes = 100%, gains = 0.
+11- 
+
+Calcul des pertes :
+-------------------
+Pertes faibles : 20%
+Pertes moyennes : 40%
+Pertes importantes : 80%
+Etoile sous autorité : -20%
+Etoile en guerre : +20%
+Modif tx hab : -(tx hab * 2)%
+Modif eff navs : -(eff * 6)%
+
+Les missions :
+--------------
+
+coefNovars=5.0
+coefMinerais=2.5
+coefCE=0.1
+coefHommes=2.0
+coefErdi=0.1
+coefDiviseurTxDev=10.0
+
+
+
+- Missions guerrieres
+
+code	nom			crewType   nov   min   ce   erdi   koz   baseCoef   TG  TD  TC  Special
+
+PILL	Pillage			Guerr	    8K   12K   1K          X        2.0      X 
+DEST	Destruction		Guerr	    8K   12K   1K          X        1.8      X 
+VOL	Vol			Guerr	    8K   12K   1K          X        1.6      X 
+RAID	Raid			Guerr	    8K   12K               X        2.0      X 		 
+CAPT	Capture			Comm	    5K                              2.0      X 		20K hom max
+EMEU	Emeute			Comm	    5K    9K               X        1.8      X 
+
+- Missions commerciales
+
+code	nom			crewType   nov   min   ce   erdi   koz   baseCoef   TG  TD  TC  Special
+
+COMM	Commerce		Diplo	    8K   12K               X        1.2         X 
+TERR	Terraformage		Ingé	    8K   12K   1K          X        0.8             X 
+DEVE	Développement		Coop	    10K                             1.0         X 
+EXTR	Extraction minière	Ouvri	         16K   1.5K        X        2.0             X 
+PROS	Prospection minière	Ouvri	         13K   1.5K        X        1.6             X 	20% chance gains * 2
+ERDI	Extraction erdividium	Ouvri	                     1K    X        1.0             X 
+
+- Missions spéciales
+
+code	nom			crewType   nov   min   ce   erdi   koz   baseCoef   TG  TD  TC  Special
+
+PACI	Pacification		Diplo	    15K   12K   1K          X        1.1          X 
+PRO+	Propagande positive	Diplo	    12K   12K   1K          X        1.3             X 
+PRO-	Propagande négative	Diplo	    12K   12K   1K          X        1.3             X 
+ANTE	Antenne espion		Espi	                                     N/A             X   Pose d'1 antenne espi.
+
+
+
+

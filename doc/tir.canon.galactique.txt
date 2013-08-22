@@ -1,0 +1,15 @@
+
+exécuté apres les déplacements de flottes
+initiative déterminée par techno guerriere
+
+portee max 5 AL
+rayon max 3 AL
+
+le tireur vise une étoile et un commandant.
+
+coup max blindage = 90pts
+coup max flotte = 33% de pertes (calculé sur l'état de la flotte cible apres résolution du tir précédent.)
+
+10000 TM + 10000 TM * dist portee en AL + 20000 TM * dist rayon en AL = qte de minerai necessaire pour avoir un coup max
+
+
