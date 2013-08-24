@@ -11,7 +11,8 @@
     <property name="db.jdbc.driver" value="com.mysql.jdbc.Driver"/>
     <property name="db.jdbc.url" value="jdbc:mysql://${db.server.nemak}"/>
 
-    <property name="play.dir" value="C:/dev/play"/>
+    <!--<property name="play.dir" value="C:/dev/play"/>-->
+    <property name="play.dir" value="/home/marco/dev/tools/play-2"/>
 
     <path id="lib.runSql">
         <fileset dir="${play.dir}/repository/cache/mysql/mysql-connector-java/jars">
@@ -24,7 +25,8 @@
     </target>
 
     <target name="test-java" depends="nemak">
-        <exec executable="C:\dev\play\play.bat">
+        <!--<exec executable="C:\dev\play\play.bat">-->
+        <exec executable="/home/marco/dev/tools/play-2/play">
             <arg value="test"/>
         </exec>
         <mkdir dir="junit/reports"/>
@@ -35,11 +37,11 @@
             <report format="frames" todir="junit/reports"/>
         </junitreport>
     </target>
-
+    <!--userid="nemak_dev" password="nemak_dev"-->
     <target name="rebuildLocalNemakDB" description="Create nemak3 schema (after a drop if needed)">
         <sql driver="${db.jdbc.driver}"
              url="jdbc:mysql://localhost/"
-             userid="nemak_dev" password="nemak_dev"
+             userid="sqlAdmin" password="sqlAdmin"
              classpathref="lib.runSql" autocommit="true" print="true">
             DROP DATABASE if exists ${db.name.nemak};
             create DATABASE ${db.name.nemak};

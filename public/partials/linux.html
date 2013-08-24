@@ -1,0 +1,200 @@
+<div class="container">
+
+    <div class="hero-unit m46-page-header">
+        <p class="text-center m46-page-header-text">Quelques mémos utiles pour l'administration basique d'une debian/ubuntu ..</p>
+    </div>
+
+    <tabs>
+        <pane title="apt & dpkg">
+
+            <h4>Dépôts</h4>
+            <p>Une liste des dépots non officiel peut être trouvée <a href="http://www.apt-get.org/">ici</a>.</p>
+            <p>Les dépôts disponibles sont listés dans :</p>
+            <pre>/etc/apt/sources.list</pre>
+            <p>Les lignes commençant par <strong>deb</strong> indiquent où trouver des .deb</p>
+            <p>Les lignes commençant par <strong>deb-src</strong> indiquent où trouver les codes sources des .deb</p>
+            <p>Les suffixes <strong>main</strong> <strong>contrib</strong> et <strong>non-free</strong> indiquent comment se positionnent les paquets en terme de licence.</p>
+            <dl>
+                <dt>main</dt>
+                <dd>paquets conformes à aux principes du logiciel libre selon Debian</dd>
+                <dt>contrib</dt>
+                <dd>paquets conformes mais ayant des dépendances qui ne le sont pas</dd>
+                <dt>non-free</dt>
+                <dd>paquets non conformes aux principes</dd>
+            </dl>
+
+            <br/>
+
+            <h4>Gestion des préférences</h4>
+            <pre># apt-cache policy</pre>
+            <p>donne la liste des préférences par dépôts et la liste des paquets étiquettés (pinning).
+                Le pinning consiste à donner des préférences spéciales à certains paquets. Permet ainsi de downgrader une lib sans
+                qu'elle se mette à jour par la suite avec un apt-get upgrade.</p>
+
+            <p>Les préférences sont situées dans le fichier :</p>
+            <pre>/etc/apt/preferences</pre>
+            <p>Le fichier peut ne pas exister s'il n'y a pas de préférences.</p>
+
+            <p>La priorité des paquets est notée de 0 à 1000 (voire +).</p>
+            <dl>
+                <dt>P < 0</dt>
+                <dd>le paquet ne sera jamais installé</dd>
+                <dt>0 < P <= 100</dt>
+                <dd>le paquet est installé SI aucune autre version du paquet n'est déjà installée</dd>
+                <dt>100 < P <= 500</dt>
+                <dd>le paquet est installé SAUF SI une version d'une autre distribution est dispo OU SI version installée est + récente</dd>
+                <dt>500 < P <= 990</dt>
+                <dd>le paquet est installé SAUF SI une version de la distribution courante est dispo OU SI version installée est + récente</dd>
+                <dt>990 < P <= 1000</dt>
+                <dd>le paquet est installé SAUF SI la version déjà installée est + récente</dd>
+                <dt>P > 1000</dt>
+                <dd>le paquet sera toujours installé MEME SI il existe une version + récente</dd>
+            </dl>
+
+            <p>La lecture du fichier preferences se fait du plus précis vers le plus large c'est à dire que les priorités définies sur des paquets précis
+                sont supérieures aux priorités définies pour des distributions entières.</p>
+
+            <h6>Exemple d'étiquettage sur une distribution entière :</h6>
+            <pre>Package: *
+Pin: release a=stable
+Pin-Priority: 900
+
+Package: *
+Pin: release a=Debian
+Pin-Priority: -10</pre>
+
+            <p>Seuls les paquets provenant de Debian seront installés et seulement de la distribution stable.</p>
+
+            <h6>Exemple d'étiquettage sur un paquet seul :</h6>
+            <pre>Package: perl
+Pin: version 5.8*
+Pin-Priority: 1001</pre>
+            <p>Le paquet perl en version 5.8 (et dérivés, cad 5.8.1 est ok mais 5.9 KO) restera toujours tel quel. Aucune maj ne viendra l'écraser.</p>
+
+            <br/>
+
+            <h4>Autres sources</h4>
+            <p><a href="http://snapshot.debian.org/">snapshot.debian.org</a> regroupe une grande partie des anciens paquets émis à un moment ou à un autre.</p>
+
+            <br/>
+
+            <h4>Logs</h4>
+
+            <p>Les logs de dpkg sont dans</p>
+            <pre>/var/log/dpkg.log</pre>
+
+            <p>Les logs de apt sont dans</p>
+            <pre>/var/log/apt/term.log</pre>
+
+            <p>Pour chercher facilement des infos dans un log :</p>
+            <pre># tail -f /mon/dossier/monlog.log | grep motclef</pre>
+            <p>permet d'afficher seulement les lignes du log contenant par exemple le nom du package</p>
+
+            <br/>
+
+            <h4>Manipulation</h4>
+            <a href="http://linux.die.net/man/8/apt-get">man pages</a>
+
+            <pre># apt-get update</pre>
+            <p>met à jour la liste des paquets disponibles à partir des dépôts (/etc/apt/sources.list)</p>
+
+            <pre># apt-get upgrade</pre>
+            <p>remplace chaque paquet installé par la dernière version disponible</p>
+
+            <pre># apt-get dist-upgrade</pre>
+            <p>upgrade + supprime les paquets inutiles</p>
+
+            <pre># dpkg-reconfigure &lt;paquet&gt;</pre>
+            <p>Ouvre un utilitaire permettant de reconfigurer le paquet</p>
+
+            <pre># apt-get install &lt;paquet&gt;</pre>
+            <p>propose l'installation du paquet correspondant et de ses dépendances</p>
+
+            <pre># apt-get install &lt;paquet&gt;=&lt;version&gt;</pre>
+            <p>propose l'installation du paquet correspondant au numéro de version voulu et de ses dépendances</p>
+
+            <pre># dpkg -i &lt;paquet&gt;</pre>
+            <p>installe le paquet</p>
+
+            <pre># dpkg --purge &lt;paquet&gt;</pre>
+            <p>désinstalle le paquet et supprime tous les fichiers de configuration liés</p>
+
+            <pre># apt-get remove &lt;paquet&gt;</pre>
+            <p>désinstalle le paquet mais conserve les fichiers de configuration liés</p>
+
+            <pre># apt-get clean</pre>
+            <p>nettoie le cache apt</p>
+
+            <br/>
+
+            <h4>Recherches infos/paquets</h4>
+
+            <pre># dpkg -S /chemin/executable</pre>
+            <p>permet de savoir quel paquet a installé cet exécutable (pour trouver un chemin : # which commande)
+                Globalement, permet de savoir quel paquet a installé le fichier désigné.</p>
+
+            <pre># dpkg -l (ou --list) &lt;paquet&gt;</pre>
+            <p>liste les paquets (installés) nommés &lt;paquet&gt; et donne leurs n° de version et une courte description.
+                En combinaison avec grep permet de trouver facilement des paquets (ex : # dpkg -l | grep icedove)
+                Sans argument, liste tous les paquets installés sur le système.</p>
+
+            <pre># dpkg --status &lt;paquet&gt;</pre>
+            <p>donne des informations générales sur le paquet</p>
+
+            <pre># dpkg -L &lt;paquet&gt;</pre>
+            <p>liste tous les fichiers installés par ce paquet</p>
+
+            <pre># apt-cache search --names-only icedove</pre>
+            <p>cherche parmi les paquets disponibles à l'installation (suppose un update avant) les paquets contenant dans leur nom le paramètre</p>
+
+            <pre># apt-cache policy &lt;nom_du_paquet&gt;</pre>
+            <p>donne les informations de version du paquet installé</p>
+
+            <br/>
+
+            <h4>GPG</h4>
+
+            <p>Lors de la mise à jour de la distribution Debian, il est possible que l'outil apt-get affiche un message d'erreur de genre :</p>
+
+            <pre>W: GPG error: ftp://ftp.fr.debian.org testing Release:
+The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 010908312D230C5F
+
+W: There is no public key available for the following key IDs:
+010908312D230C5F</pre>
+
+            <p>Il s'agit d'une fonctionnalité du système d'apt-get permettant de garantir l'authenticité des serveurs de mise à jour Debian.
+
+                Pour y remédier, il suffit de saisir les deux commandes suivantes, en prenant soin de remplacer le numéro de la clé par celui affiché dans le message d'erreur :
+            </p>
+
+            <pre># gpg --keyserver pgpkeys.mit.edu --recv-key  010908312D230C5F
+# gpg -a --export 010908312D230C5F | sudo apt-key add -</pre>
+
+
+        </pane>
+
+        <pane title="Divers & utiles">
+
+            <h4>locate</h4>
+
+            <p>locate est un utilitaire permettant d'effectuer des recherches de fichiers/dossiers dans une BDD indexée</p>
+
+            <p>Mettre à jour la BDD</p>
+            <pre># updatedb</pre>
+
+            <p>Chercher foo dans toute l'arborescence et retourner tout ce qui contient foo</p>
+            <pre># locate foo</pre>
+
+            <p>Ne retourner que les fichiers/dossiers nommés exactement foo</p>
+            <pre># locate -b '\foo'</pre>
+
+            <br/>
+
+            <h4>hardinfo</h4>
+            <p>le paquet hardinfo donne toutes les infos matérielles utiles :</p>
+            <pre># apt-get install hardinfo</pre>
+
+        </pane>
+    </tabs>
+
+</div>

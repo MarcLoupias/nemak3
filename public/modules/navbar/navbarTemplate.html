@@ -1,0 +1,65 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="brand" href="#">Nemak 3</a>
+
+            <div class="nav-collapse collapse">
+
+                <ul class="nav">
+                    <li class="divider-vertical"></li>
+                    <li ng-class="navClass('news')"><a href="#/news">News</a></li>
+                    <li class="divider-vertical"></li>
+                    <li ng-class="navClass('regles')"><a href="#/regles">Règles</a></li>
+                    <li class="divider-vertical"></li>
+                    <li ng-class="navClass('apropos')"><a href="#/apropos">A Propos</a></li>
+                    <li class="divider-vertical"></li>
+                   <!-- <li ng-class="navClass('linux')"><a href="#/linux">Linux</a></li>
+                    <li class="divider-vertical"></li>-->
+                    <!--<li ng-class="navClass('')" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">CrudDemo<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/crudDemoRead">CrudDemo Read</a></li>
+                            <li><a href="#/crudDemoAdd">CrudDemo Add</a></li>
+                            <li><a href="#/crudDemoUpdate">CrudDemo Update</a></li>
+                            <li><a href="#/crudDemoRemove">CrudDemo Remove</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Téléchargements</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">A Propos</a></li>
+                        </ul>
+                    </li>-->
+                </ul>
+
+                <!--<ul class="nav" ng-hide="user == undefined">
+                    <li class="divider-vertical"></li>
+                    <li><a href="http://marc-loupias.fr/owncloud">Owncloud</a></li>
+                    <li class="divider-vertical"></li>
+                </ul>-->
+
+                <form class="navbar-form pull-right" ng-hide="user != undefined">
+
+                    <input class="span2" type="text" placeholder="Login" ng-model="login">
+                    <input class="span2" type="password" placeholder="Password" ng-model="pwd">
+                    <button type="submit" id="btnConnexion" ng-click="doLogin(login, pwd)" class="btn">Connexion</button>
+
+                </form>
+
+                <ul class="nav pull-right" ng-hide="user == undefined">
+                    <li class="divider-vertical"></li>
+                    <li><a href="">{{user.login}}</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="" ng-click="doLogout()">Déconnexion</a></li>
+                    <li class="divider-vertical"></li>
+                </ul>
+
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
