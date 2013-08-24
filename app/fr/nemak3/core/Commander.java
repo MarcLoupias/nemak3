@@ -48,6 +48,10 @@ public class Commander extends GameObject {
 
     @NotNull
     @Embedded
+    private CommanderRadar commanderRadar;
+
+    @NotNull
+    @Embedded
     private CommanderTechnologies commanderTechnologies;
 
     @NotNull
@@ -103,6 +107,50 @@ public class Commander extends GameObject {
 
     public void setCommanderType(CommanderType commanderType) {
         this.commanderType = commanderType;
+    }
+
+    @Nullable
+    public Collection<CommanderOrders> getCommanderOrders() {
+        return commanderOrders;
+    }
+
+    public void setCommanderOrders(@Nullable Collection<CommanderOrders> commanderOrders) {
+        this.commanderOrders = commanderOrders;
+    }
+
+    @Nullable
+    public Collection<CommanderResults> getCommanderResults() {
+        return commanderResults;
+    }
+
+    public void setCommanderResults(@Nullable Collection<CommanderResults> commanderResults) {
+        this.commanderResults = commanderResults;
+    }
+
+    @Nullable
+    public Collection<Star> getOwnedStars() {
+        return ownedStars;
+    }
+
+    public void setOwnedStars(@Nullable Collection<Star> ownedStars) {
+        this.ownedStars = ownedStars;
+    }
+
+    public double getArmouring() {
+        return armouring;
+    }
+
+    public void setArmouring(double armouring) {
+        this.armouring = armouring;
+    }
+
+    @NotNull
+    public CommanderRadar getCommanderRadar() {
+        return commanderRadar;
+    }
+
+    public void setCommanderRadar(@NotNull CommanderRadar commanderRadar) {
+        this.commanderRadar = commanderRadar;
     }
 
     @NotNull

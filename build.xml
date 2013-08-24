@@ -39,7 +39,7 @@
     <target name="rebuildLocalNemakDB" description="Create nemak3 schema (after a drop if needed)">
         <sql driver="${db.jdbc.driver}"
              url="jdbc:mysql://localhost/"
-             userid="nemak_dev" password="nemak"
+             userid="nemak_dev" password="nemak_dev"
              classpathref="lib.runSql" autocommit="true" print="true">
             DROP DATABASE if exists ${db.name.nemak};
             create DATABASE ${db.name.nemak};
