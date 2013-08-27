@@ -8,3 +8,13 @@
 .m46-page-header-text {
     margin-bottom: 0px;
 }
+
+#tableGalaxie {
+
+}
+#tableGalaxie > tbody > tr > td  {
+    border: 1px solid;
+    border-color: floralwhite;
+    width:80px;
+    height:80px;
+}

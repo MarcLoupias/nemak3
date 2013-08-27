@@ -20,7 +20,7 @@ navbarDirective.directive('navbar', function factory($rootScope, $location, Logi
             };
 
             $scope.doLogin = function(login, pwd) {
-                var user = {};
+                /*var user = {};
                 user.login = login;
                 user.pwd = pwd;
 
@@ -31,7 +31,11 @@ navbarDirective.directive('navbar', function factory($rootScope, $location, Logi
                     } else {
                         $rootScope.user = response.data;
                     }
-                });
+                });*/
+                var user = {};
+                user.login = "toto";
+                user.pwd = "";
+                $rootScope.user = user;
             };
 
             $scope.doLogout = function() {

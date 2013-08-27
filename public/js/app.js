@@ -4,7 +4,8 @@
 // Declare app level module which depends on filters, and services
 angular.module('nemak3',
 [
-'nemak3.filters', 'nemak3.services', 'nemak3.directives', 'nemak3.controllers'
+    'ui.bootstrap',
+    'nemak3.filters', 'nemak3.services', 'nemak3.directives', 'nemak3.controllers'
 ]).
   config(['$routeProvider', function($routeProvider) {
 
@@ -14,6 +15,8 @@ angular.module('nemak3',
         $routeProvider.when('/apropos', {templateUrl: 'assets/partials/apropos.html'});
     /*$routeProvider.when('/dev', {templateUrl: 'assets/partials/dev.html'});
     $routeProvider.when('/linux', {templateUrl: 'assets/partials/linux.html'});*/
+        $routeProvider.when('/game/1', {templateUrl: 'assets/partials/game.html'});
+
 
 
 

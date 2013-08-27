@@ -37,11 +37,22 @@
                     </li>-->
                 </ul>
 
-                <!--<ul class="nav" ng-hide="user == undefined">
+                <ul class="nav" ng-hide="user == undefined">
                     <li class="divider-vertical"></li>
-                    <li><a href="http://marc-loupias.fr/owncloud">Owncloud</a></li>
+
+                    <li class="dropdown" ng-controller="ListGamesCtrl">
+                        <a class="dropdown-toggle">
+                            Parties en cours
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="game in games">
+                                <a href="#/game/1">{{game.name}}</a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="divider-vertical"></li>
-                </ul>-->
+                </ul>
 
                 <form class="navbar-form pull-right" ng-hide="user != undefined">
 
