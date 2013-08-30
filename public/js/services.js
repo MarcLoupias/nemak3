@@ -4,7 +4,8 @@
 
 var myServices = angular.module('nemak3.services',
         [
-            'gamesService',
+            'playerGamesService',
+            'publicGamesService',
             'loginModule'
         ]
     ).

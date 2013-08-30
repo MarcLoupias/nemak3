@@ -1,6 +1,6 @@
-var gamesService = angular.module('gamesService', []);
-gamesService.factory('GamesService', function() {
-    var gameService;
+var playerGamesService = angular.module('playerGamesService', []);
+playerGamesService.factory('PlayerGamesService', function() {
+
     var games = [];
     var game1 = {id:1, name:"game one"};
     var game2 = {id:2, name:"game two"};

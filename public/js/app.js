@@ -13,6 +13,7 @@ angular.module('nemak3',
     $routeProvider.when('/news', {templateUrl: 'assets/partials/news.html'});
         $routeProvider.when('/regles', {templateUrl: 'assets/partials/regles.html'});
         $routeProvider.when('/apropos', {templateUrl: 'assets/partials/apropos.html'});
+        $routeProvider.when('/gameslist', {templateUrl: 'assets/partials/gamesList.html', controller: 'PublicGamesCtrl'});
     /*$routeProvider.when('/dev', {templateUrl: 'assets/partials/dev.html'});
     $routeProvider.when('/linux', {templateUrl: 'assets/partials/linux.html'});*/
         $routeProvider.when('/game/1', {templateUrl: 'assets/partials/game.html'});

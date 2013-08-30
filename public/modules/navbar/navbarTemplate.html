@@ -40,6 +40,10 @@
                 <ul class="nav" ng-hide="user == undefined">
                     <li class="divider-vertical"></li>
 
+                    <li ng-class="navClass('gameslist')"><a href="#/gameslist">Parties</a></li>
+
+                    <li class="divider-vertical"></li>
+
                     <li class="dropdown" ng-controller="ListGamesCtrl">
                         <a class="dropdown-toggle">
                             Parties en cours
