@@ -7,8 +7,8 @@
             <thead>
             <tr><th>Nom</th><th>Game master</th><th>Nb. joueurs</th><th>Taille</th></tr>
             </thead>
-            <tbody ng-repeat="g in games">
-            <tr><td>{{g.name}}</td><td>{{g.gameMaster}}</td><td>{{g.nbPlayers}}</td><td>{{g.scale}}</td></tr>
+            <tbody>
+            <tr ng-repeat="g in games"><td>{{g.name}}</td><td>{{g.gameMaster}}</td><td>{{g.nbPlayers}}</td><td>{{g.scale}}</td></tr>
             </tbody>
         </table>
     </div>

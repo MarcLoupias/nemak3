@@ -6,7 +6,8 @@ var myServices = angular.module('nemak3.services',
         [
             'playerGamesService',
             'publicGamesService',
-            'loginModule'
+            'loginModule',
+            'playerGameClassementsService'
         ]
     ).
   value('version', '0.1');
