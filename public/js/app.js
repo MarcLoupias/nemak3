@@ -5,6 +5,7 @@
 angular.module('nemak3',
 [
     'ui.bootstrap',
+    'ngGrid',
     'nemak3.filters', 'nemak3.services', 'nemak3.directives', 'nemak3.controllers'
 ]).
   config(['$routeProvider', function($routeProvider) {

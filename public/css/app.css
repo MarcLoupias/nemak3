@@ -29,3 +29,9 @@
 #canvars-radar {
     border:1px solid #000000;
 }
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 620px;
+    height: 303px
+}

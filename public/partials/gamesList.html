@@ -14,3 +14,19 @@
     </div>
     <div class="span1"></div>
 </div>
+
+<div class="row-fluid">
+    <div class="span1"></div>
+    <div class="span10">
+        <table class="table table-bordered table-striped">
+            <caption>Liste de mes parties</caption>
+            <thead>
+            <tr><th>Nom</th><th>Game master</th><th>Nb. joueurs</th><th>Taille</th></tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="g in games"><td>{{g.name}}</td><td>{{g.gameMaster}}</td><td>{{g.nbPlayers}}</td><td>{{g.scale}}</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="span1"></div>
+</div>

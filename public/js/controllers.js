@@ -6,7 +6,8 @@ var myApp = angular.module('nemak3.controllers',
     [
         'playerGameRadarCtrl',
         'listGamesCtrl',
-        'playerGameClassementsCtrl'
+        'playerGameClassementsCtrl',
+        'playerGameOrdersCtrl'
     ]
 );
 
