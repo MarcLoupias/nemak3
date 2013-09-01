@@ -1,5 +1,161 @@
 
 <div class="row-fluid">
+    <div class="span12">
+        <h4>Déplacement</h4>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+        <h5>Déplacement normal :</h5>
+        <div class="btn-group">
+            <button class="btn">REHAK</button>
+            <button class="btn">HYJUH</button>
+            <button class="btn">POKIL</button>
+            <button class="btn">POKIL</button>
+            <button class="btn">POKIL</button>
+            <button class="btn">POKIL</button>
+            <button class="btn">POKIL</button>
+            <button class="btn">POKIL</button>
+        </div>
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+<div class="row-fluid"><div class="span12"></div></div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h4>Missions</h4>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+        <div class="gridStyle" ng-grid="gridMissionsOptions"></div>
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+<div class="row-fluid"><div class="span12"></div></div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h4>Constructions</h4>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+        <form class="form-inline">
+            <input type="number" class="input-medium" placeholder="Navettes">
+            <input type="number" class="input-medium" placeholder="Lasers">
+            <input type="number" class="input-medium" placeholder="Missiles">
+        </form>
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+<div class="row-fluid"><div class="span12"></div></div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h4>Affectations</h4>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+        <form class="form-inline">
+            <select ng-model="crewType1" ng-options="ct.label for ct in crewTypes1">
+            </select>
+            <input type="number" class="input-medium" placeholder="quantité">
+        </form>
+        <form class="form-inline">
+            <select ng-model="crewType2" ng-options="ct.label for ct in crewTypes2">
+            </select>
+            <input type="number" class="input-medium" placeholder="quantité">
+        </form>
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+<div class="row-fluid"><div class="span12"></div></div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h4>Investissements</h4>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+        <form class="form-inline">
+            <select ng-model="investmentType1" ng-options="it.label for it in investmentTypes1">
+            </select>
+            <input type="number" class="input-medium" placeholder="montant novars">
+        </form>
+        <form class="form-inline">
+            <select ng-model="investmentType2" ng-options="it.label for it in investmentTypes2">
+            </select>
+            <input type="number" class="input-medium" placeholder="montant novars">
+        </form>
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h4>Taux d'imposition</h4>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+        <div class="input-append">
+            <input class="span4" id="tauxImposition" type="text">
+            <span class="add-on">Ancien taux : 2.00</span>
+        </div>
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+
+
+
+
+
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+
+<div class="row-fluid">
 
     <div class="span1"></div>
     <div class="span10">
@@ -13,7 +169,39 @@
 
     <div class="span1"></div>
     <div class="span10">
-        <div class="gridStyle" ng-grid="gridMissionsOptions"></div>
+
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+
+    </div>
+    <div class="span1"></div>
+
+</div>
+
+
+<div class="row-fluid">
+
+    <div class="span1"></div>
+    <div class="span10">
+
     </div>
     <div class="span1"></div>
 

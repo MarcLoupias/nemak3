@@ -1,6 +1,8 @@
 var playerGameOrdersCtrl = angular.module('playerGameOrdersCtrl', []);
 
-playerGameOrdersCtrl.controller('PlayerGameOrdersCtrl', function($scope) {
+playerGameOrdersCtrl.controller('PlayerGameOrdersCtrl', function(
+    $scope, ListCrewTypesService, ListInvestmentsTypesService
+    ) {
 
     $scope.gridDataOrdersMissions = [
         {star:"REHAK", missionCode: "PILL", shuttleQty: 300, inspection: "O", warriors:null, lasers:null, missiles:null},
@@ -29,5 +31,11 @@ playerGameOrdersCtrl.controller('PlayerGameOrdersCtrl', function($scope) {
             {field:'missiles', displayName:'Missiles'}
         ]
     };
+
+    $scope.crewTypes1 = ListCrewTypesService.listCrewTypes();
+    $scope.crewTypes2 = ListCrewTypesService.listCrewTypes();
+
+    $scope.investmentTypes1 = ListInvestmentsTypesService.listInvestmentsTypes();
+    $scope.investmentTypes2 = ListInvestmentsTypesService.listInvestmentsTypes();
 
 });

@@ -9,9 +9,19 @@
     margin-bottom: 0px;
 }
 
+th.text-align-center {
+    text-align: center;
+}
+
+td.text-align-right {
+    text-align: right;
+    padding-right: 16px;
+}
+
 #tableGalaxie {
 
 }
+
 #tableGalaxie > tbody > tr > td  {
     border: 1px solid;
     border-color: floralwhite;
@@ -22,8 +32,8 @@
 .container-canvas-radar {
     margin-top: 35px;
     margin-right: auto;
-    margin-left: 10px;
-    width: 800px;
+    margin-left: auto;
+    width: 1000px;
 }
 
 #canvars-radar {
