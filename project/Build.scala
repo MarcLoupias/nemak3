@@ -14,7 +14,8 @@ object ApplicationBuild extends Build {
     javaJdbc,
     "mysql" % "mysql-connector-java" % "5.1.25",
     "org.hibernate" % "hibernate-entitymanager" % "4.2.1.Final",
-    "com.intellij" % "annotations" % "5.1"
+    "com.intellij" % "annotations" % "5.1",
+    "org.mockito" % "mockito-all" % "1.9.5"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(

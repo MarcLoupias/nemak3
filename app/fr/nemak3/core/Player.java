@@ -18,6 +18,10 @@ public class Player extends GameObject {
     private String lastName;
     @NotNull
     private String email;
+    @NotNull
+    private String login;
+    @NotNull
+    private String pwd;
 
     @Nullable
     @OneToMany(mappedBy = "playerOwner")
@@ -83,5 +87,23 @@ public class Player extends GameObject {
 
     public void setPlayedGames(@Nullable Collection<Game> playedGames) {
         this.playedGames = playedGames;
+    }
+
+    @NotNull
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(@NotNull String login) {
+        this.login = login;
+    }
+
+    @NotNull
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(@NotNull String pwd) {
+        this.pwd = pwd;
     }
 }
