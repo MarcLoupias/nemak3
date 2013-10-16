@@ -4,7 +4,6 @@
 
 var myServices = angular.module('nemak3.services',
         [
-            'loginModule',
             'playerGamesService',
             'publicGamesService',
             'playerGameClassementsService',
