@@ -19,3 +19,15 @@ Dans liste des étoiles contrôlées, l'autorité apparaît.
 
 Pallier 1700
 Tir avec canons NEFs sans qu'ils s'endommagent.
+
+Pallier 2600
+Vous pouvez enrichir votre tir au canon avec 1 kg (et un seul) de
+  Maggnos si vous en possédez. Ainsi, si le commandant visé possède des
+  leurres, vous en détruirez deux au lieu d'un dans le cas d'un tir sans
+  erdividium.
+  
+Pallier 2900
+Lors de vos dons d'osium 18 aux Xarls (Mission DONO), si vous en
+  donnez plus de 10 kg, vous aurez peut-être la chance de découvrir leurs
+  nouveaux échanges.
+  

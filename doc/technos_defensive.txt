@@ -20,9 +20,26 @@ Leurres étoiles 40% + efficaces
 
 Pallier 1500
 % de réussite des actions commandos sur son vaisseau – importantes.
+Vous possédez un système défensif permettant de baisser le
+pourcentage de chance de réussite d'une action commando contre votre
+  vaisseau.
 
 Pallier 1800
 Antennes espions + efficaces
+Vos éventuelles antennes-espions sont plus efficaces. Elles vous
+  permettront de connaître, en plus des renseignements habituels, le nombre de
+  guerriers et de commandos avec leur efficacité et le blindage des vaisseaux
+  ainsi espionnés.
 
 Pallier 2200
 Espionnage + efficace
+
+Pallier 2800
+Pour 50 kg d'Osium 18, vous pouvez brouiller la défense d'une de vos
+  planètes, les défenses n'apparaîtront sur aucun radar et ne seront pas
+  connues lors d'un espionnage.
+
+Pallier 3100
+Votre blindage est plus efficace contre les Astex et les rayons
+  Phryst et Emadis. Cela dépend évidemment du niveau de votre blindage.
+

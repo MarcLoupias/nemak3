@@ -21,14 +21,31 @@ Pallier 1000
 Si % Slyrmes >= 20%
 Si possession de Klunk,
 apprends comment se servir du Maggnos contre ses ennemis.
+Vous en savez un peu plus sur le Maggnos qui bien traité pourrait
+devenir une arme redoutable et transportable. Si vous possédez un % de
+  slyrmes au moins égal à 20% et du Klunk, vous pourrez lors de vos
+  opérations commandos, déposer un kg de Maggnos dans le vaisseau adverse.
+  Cela détraquera ses navettes et ses pertes lors des missions seront plus
+  importantes.
 
 Pallier 1300
 NEFS
+Vos nefs peuvent utiliser une nouvelle attaque contre les autres
+  nefs: L'attaque Destructrice (code DE). Elle a les mêmes coefficients
+  d'attaque, de défense et de récupération que l'attaque en Force. Mais elle
+  permet également (si la force d'attaque est suffisante) de détruire la nef
+  attaquée. Le % de dégâts infligés sert aussi de % de chance de destruction
+  (max 75%). Cependant les pertes de l'attaquant sont bien plus importantes.
 
 Pallier 1600
 Canon galactique améliorié.
 Pertes de blindage + importante.
 Si perte de blindage, dégats + importants (fonction des dégats en blindage)
+Votre canon se trouve amélioré. Si vous atteignez votre but avec un
+  tir canon, vous utilisez le blindage adverse comme projectile et ainsi ses
+  pertes en technologie sont plus importantes (donc seulement en cas de fort
+  blindage). Dans tous les cas, ses pertes en blindage sont également plus
+  importantes
 
 Pallier 2000
 RAID, si la mission est la + importante en nb de navettes, le risque de passage de paix à guerre est de 100%
@@ -38,6 +55,21 @@ Lors de missions DEPI (Dépiégeage), % de chance de détruire le leurre étoile
 
 Pallier 2300 (ET Race principale Rogusk OU Militaire)
 Possiblité de poser un pisteur lors d'une opération commandos sur la cible.
+Vous obtenez l'invention du Commandant Sylvestre qui a reçu le
+  Xarl d'or. Lors d'une opération commando réussie, en plus du sabotage, vous
+  installez automatiquement un pisteur (un mouchard) sur le vaisseau visé. Ce
+  pisteur vous donnera la position de celui-ci plus d'autres informations qui
+  dépendront de votre technologie combinatoire. Vous ne pouvez installer qu'un
+  seul pisteur ; en cas de destruction vous en installerez automatiquement un
+  autre lors de votre prochaine opération commando réussie. Il est inactif en
+  zone neutre. Un vaisseau ne peut avoir qu'un seul pisteur. Un pisteur
+  installé sur un autre le détruit. Pour le commandant pisté, le % de chance
+  de découvrir un pisteur dépend de son nombre d'espions et, dans ce cas, le
+  % de destruction dépend du nombre d'artificiers.
 
 Pallier 2600
 Opérations commandos, nouvelle cible : Déplacement fusion.
+
+Pallier 2900
+A chaque opération sabotage réussie, en plus de la pause un
+  pisteur, le sabotage permet de casser un leurre vaisseau.
